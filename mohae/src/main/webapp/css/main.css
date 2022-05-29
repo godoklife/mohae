@@ -1,138 +1,134 @@
 @charset "UTF-8";
 
-
-
-/* 외부 폰트 */
-
-
-
 @font-face {
-    font-family: 'SBAggroB';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-/* 모든곳에 적용 */
-*{ 
-	font-family: "SBAggroB";
-	padding: 0px;
-	margin: 0px;
+a{
+	text-decoration : none;
+	color: black;
 }
-/* a태그(링크) 기본 속성 제거  */
-a{ text-decoration: none; color: black;}
-
+a:hover {
+	color : "skyblue";
+}
+*{
+	font-family: "CookieRun-Regular";
+	margin : 0 0 0 0;
+	padding : 0 0 0 0;
+	/* border : solid 1px red; */
+}
+body{
+	background-color: #fafbfc;
+}
+.topmarquee{
+	font-weight: bold;
+	color:red;
+	font-size: 20px;
+}
 .boardview_title{
-	border-bottom: 2px solid black; /* 아래 테두리 */
-	padding: 10px; /* 안쪽여백 */
-	margin-top: 50px; /* 위 바깥여백 */
+	border-bottom: solid 2px #eeeeee;
+	padding : 10px;
+	margin-top : 50px;
+}
+.boardview_title_text{
+	margin-left:5%;
 }
 .boardview_content{
-	min-height: 400px; /*최소높이*/	
+	min-height:400px;
 }
-textarea {
-	resize: none;	/* 크기변경 불가능 */
+textarea{
+	resize:none;
 }
 .replywriter{
 	font-size: 14px;
 }
 .replybtn{
-	font-size: 10px;
+	font-size:10px
 }
 .replydate{
 	font-size: 7px;
 }
-.header_logo{
-	font-size: 40px;
-}
-.header_topmenu{
-	font-size: 13px;
-	color: #999999;
-	padding: 2px 6px 2px 6px;
+#logo{
+	font-size:40px;
+	font-weight: bold;
 }
 .header_input{
-	border: 0; /* 테두리 제거 */
-	border-bottom: 2px solid black;
+	border : 0;
+	border-bottom: solid 1px black;
+	background-color: #eeeeee;
 }
 .shoppingbox{
 	font-size: 10px;
-	background-color: skyblue;
+	background-color:skyblue;
 	color: white;
 	padding: 2px 5px 2px 5px;
-	border-radius: 10px;
-	margin-right: 10px;
+	border-radius: 10px;	
 }
-
-/* 드랍다운에 마우스 올렸을때 */
-.dropdown:hover .dropdown-menu{
+.dropdown:hover .dropdown-menu{	/* 부트스트랩에서는 호버로 매뉴 여는 기능을 제공 안함. 해당 란은 그 기능 제공 */
 	display: block;
 }
 
+
 .boardlist_title{
-	width : 20%;
-	border-bottom: 1px solid black;
-	padding: 20px;
-	margin: 100px 0px 50px 0px;
+	border-bottom: solid 1px black;
+	padding : 5%;
+	margin : 3% 0 3% 0;
 }
-.boardlist_topbtn{
-	margin: 20px 0px;	
-}
+
 .pagenum{
-	color: black;
-	font-size: 12px;
+	color:black;
+	font-size:12px;
 }
 
-/* 메인 */
-
+/* main.jsp */
 .adbox{
-	margin: 50px 10px 50px 0px;
+	margin: 50px 10px 50px 0;
 }
 .main_box{
-	margin-bottom: 70px;
+	margin-bottom:50px;
 }
 .main_title{
-	text-align:  center;
-	font-size: 23px;
-	margin: 20px;
+	text-align:center;
+	font-size: 20px;
+	font-weight: bold;
 }
+.carousel-item img{		/* 캐러셀 내 이미지 중앙정렬 */
+	display: block;
+	margin : 0 auto;
+}
+
 .best_box img{
-	width: 100%;
+	width:100%;
 }
-.p_item{ margin: 10px; }
-.p_title{ font-size: 15px; }
-.p_size{ 
-	color: #999999; 
-	font-size: 12px; 
-	border-bottom: 1px solid #999999 ;
-	padding-bottom: 10px;
+.imgbox{
+	height:350px;
 }
-.p_discount{
-	font-size: 12px;
-	color: #999999;
-	text-decoration: line-through; /*취소선*/
+.p_item{
+	margin:10px;
 }
-.p_price{ 
-	font-size: 12px; 
+.p_title{
+	font-size: 20px;
+	font-weight: bold;
+	
+}
+.p_size{
+	color:#999999;
+	font-size: 15px;
+	border-bottom: solid 1px #999999;
+	padding-bottom: 5px;
+}
+.p_originalprice{
+	font-size:15px;
+	color:#999999;
+	text-decoration: line-through;	/* 취소선 */
+}
+.p_discountprice{
+	font-size: 20px;
 }
 .p_review{
-	font-size: 12px; color: #999999;
-	text-align: right; 
+	text-align: right;
+	font-size: 15px;
+	color:#999999;	
 }
-
-img{
-	width :50%;
-}
-
-.main_nav .logo img {
-    height: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
