@@ -4,97 +4,127 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<title>모해모해</title>
-	<!-- 부트스트랩 css cdn -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
-	<!-- 사용자정의 css -->
-	<link href="/moheamohea/css/main.css" rel="stylesheet">
+<title>P H O N E T A K U</title>
+	<!--  부트스트랩 CSS CDN -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- 사용자 정의 CSS -->
+	<link href="/mohae/css/main.css" rel="stylesheet">
 	<!-- 폰트어썸[ 아이콘 ]  -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+
 </head>
 <body>
-	<!--   헤더페이지[ 모든 페이지 사용되기 때문에 = 최상위에서 절대경로 ] -->
+	<!-- 해더페이지는 서로 다른 페이지(경로)에서 실행되어야 하기 때문에 절대경로로 작성해야함. -->
 	<%
-		String loginid 
-		= (String)session.getAttribute("login"); // 세션 호출 ( 기본타입 = Odject )
+		String loginid = (String)session.getAttribute("login");	// 세션 호출, 기본타입 : Object
 	%>
-	<div class="container"> <!-- container : 박스권 -->
+	<div style="background-color:#abd0bc;">
 	
-		<div class="py-4"> <!-- py : 위아래 패딩(안쪽여백) -->
-			<div class="row"> <!-- row : 가로배치 -->
-				<div class="col-md-4"> <!-- 그리드[12조각중 4 ] -->
-					<a href="/moheamohea/main.jsp" id="logo_href" style=" position: fixed;z-index:9999;    top: 66px;    left: 30px;">
-				<img src="/moheamohea/img/모해로고1.png" alt="" id="logo"></a>
+	
+		<%if(loginid!=null && loginid.equals("admin")) {%>
+			<marquee scrollamount="5" class="topmarquee"> 관리자 계정으로 로그인 하셨습니다!!!</marquee>
+		<%} %>
+		<div class="container">
+		
+			<div class = "row py-4">
+			
+				<div class="col-md-4">
+					<img src=""><span id="logo">LOGO</span>
 				</div>
-				<div class="col-md-4 offset-4 d-flex justify-content-end header_topmenu"> <!-- offset 공백그리드 -->
+				<div id="test" class="col-md-5 offset-3 d-flex justify-content-end">
 				
-					<ul class="nav"> <!-- nav : li 가로배치  -->
-					<% if( loginid == null ){ %> <!--  로그인이 안된 상태 = 만약에 세션이 없으면  -->
-						<li> <a href="/moheamohea/member/login.jsp" class="header_topmenu">로그인</a> · </li>
-						<li> <a href="/moheamohea/member/signup.jsp"  class="header_topmenu">회원가입</a> · </li> 
-					<%} %>
-					<% if( loginid != null ){ %> <!--  만약에 로그인된 상태 = 만약에 세션이 있으면 -->
-						<li> <span  class="header_topmenu"> <%=loginid %>님 </span> · </li>
-						<li> <a href="/moheamohea/logout"  class="header_topmenu">로그아웃</a> · </li>
-						<li> <a href="/moheamohea/member/myshopping.jsp"  class="header_topmenu">주문내역</a> · </li>
-						
-						<!-- 로그인 id가 admin이면  -->
-						<%  if( loginid.equals("admin") ){ %>
-							<li> <a href="/moheamohea/admin/dashboard.jsp"  class="header_topmenu">관리자모드</a> </li>
+				
+				
+				<ul class="nav">	<!--  nav : li 를 가로배치하는 부트스트랩 -->
+					<li><a href="/mohae/teamchatting.jsp" style="color:red;">DB형 채팅방</a> | </li>
+					<li><a href="/mohae/board/chatting.jsp" style="color:red;">소켓형 채팅방</a> | </li>
+					<li><a href="/mohae/main.jsp">HOME</a> | </li>
+					<!--  로그인이 되지 않은 상태 -->
+					<% if(loginid==null) { %>
+						<li> <a href="/mohae/member/login.jsp"> 로그인 </a> | </li>
+						<li><a href="/mohae/member/signup.jsp"> 회원가입 </a> | </li>
+					<% } else if (loginid!=null) {%>
+					<!--  만약 로그인 아이다가 admin이면 관리자 페이지로 이동 -->
+						<%if(loginid.equals("admin")) {%>
+							<li> <a href = "/mohae/admin/dashboard.jsp" style="color:#ff2b80;">관리페이지</a> | </li>
 						<%} %>
-						
-					<%} %>
-						<li> <a href="/moheamohea/board/boardlist.jsp?key=&keyword="  class="header_topmenu">자유게시판</a> </li>
+						<li><a href="/mohae/Logout" id="logout"> 로그아웃 </a> | </li>
+						<li><a href="/mohae/member/info.jsp"> 회원정보</a> | </li>
+					<% } %>
+					<li><a href="/mohae/board/boardlist.jsp?key=&keyword=">자유게시판</a></li>
 					</ul>
 				</div>
 			</div>
-		</div>  <!--  상단 메뉴 끝  -->
-		
-		<div class="navbar navbar-expand-md navbar-light bg-white">  <!--  본메뉴  -->
-			<ul class="navbar-nav col-md-12 justify-content-between"> 
-				<li class="nav-item"> <a href="/jspweb/1.jsp"  style="color: black;"> 공지사항 </a> </li>
-				<li class="nav-item"> <a href="/jspweb/1.jsp" style="color: black;"> 이벤트 </a> </li>
-				<li class="nav-item"> <a href="/jspweb/1.jsp" style="color: black;"> 여행정보 </a> </li>
+			<!--  본 매뉴 -->
+			<div id="navbar" class="navbar navbar-expand-md navbar-light bg-white">
 				
-				<li class="nav-item dropdown"> <!-- dropdown : 드랍다운 -->
-					 <a href="#"  style="color: black;">  </a> <!--  data-bs-toggle="dropdown" : 해당 태그를 클릭했을때 드랍다운 열기  -->
-					<!-- 드롭다운 -->
-					<div class="dropdown-menu">	<!--  dropdown-menu : 드랍다운 내용물  -->
-						<a class="dropdown-item" href="/jspweb/1.jsp"> 드랍다운 메뉴 </a>
-						<a class="dropdown-item" href="/jspweb/1.jsp"> 드랍다운 메뉴 </a>
-						<a class="dropdown-item" href="/jspweb/1.jsp"> 드랍다운 메뉴 </a>
-						<a class="dropdown-item" href="/jspweb/1.jsp"> 드랍다운 메뉴 </a>
-						<a class="dropdown-item" href="/jspweb/1.jsp"> 드랍다운 메뉴 </a>
-					</div>
-				 </li>
-				 
-				<li class="nav-item"> <a href="/moheamohea/1.jsp"  style="color: black;"> 국내여행 </a> </li>
-				<li class="nav-item"> <a href="/moheamohea/1.jsp"  style="color: black;"> 해외여행 </a> </li>
-
-				<li class="nav-item"> <a href="/moheamohea/teamchatting.jsp"  style="color: black;"> 고객센터채팅 </a> </li>
-				<li class="nav-item"> <a href="/moheamohea/board/chatting.jsp"  style="color: black;"> 자유채팅 </a> </li>
-				<li class="nav-item"> <a href="/moheamohea/1.jsp"  style="color: black;"> 모해모해 </a> </li>
-				
-
-				</li>
-				<li class="nav-item"> <a href="/moheamohea/product/productcart.jsp">나의 여행<span class="shoppingbox">3</span></a></li>
-			</ul>
-		</div> <!-- 본 메뉴 끝 -->
-		
-	</div> <!--  메뉴 끝  -->
-		
-	<!-- 부트스트랩 js cdn -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- 사용자정의 js -->
-	<script src="/jspweb/js/main.js" type="text/javascript"></script>
-	<!-- jquery 최신 cdn -->
-	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+				<div class="right_fixed" style="background-color: red;">
+					실시간채팅박스
+				</div>
+			
+				<ul class="nav col-md-10 offset-1 justify-content-between">
+					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">애플<i class="fab fa-apple"></i></a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">PROMAX</a>
+							<a class="dropdown-item" href="#">PRO</a>
+							<a class="dropdown-item" href="#">GENERAL</a>
+							<a class="dropdown-item" href="#">MINI</a>
+							<a class="dropdown-item" href="#">SE</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown"> <a href="#">구글<i class="fab fa-google"></i></a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">PRO</a>
+							<a class="dropdown-item" href="#">GENERAL</a>
+							<a class="dropdown-item" href="#">A</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">삼성</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">Z</a>
+							<a class="dropdown-item" href="#">S</a>
+							<a class="dropdown-item" href="#">A</a>
+							<a class="dropdown-item" href="#">M</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">화웨이</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">P</a>
+							<a class="dropdown-item" href="#">Mate</a>
+							<a class="dropdown-item" href="#">HONOR</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">샤오미</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">Mi</a>
+							<a class="dropdown-item" href="#">RedMi</a>
+							<a class="dropdown-item" href="#">BlackShark</a>
+							<a class="dropdown-item" href="#">POCO</a>
+						</div>
+					</li>
+					<li class="nav-item"> <a href="#">원플러스</a></li>
+					<li class="nav-item"> <a href="#">아수스</a></li>
+					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">소니</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">PRO</a>
+							<a class="dropdown-item" href="#">1</a>
+							<a class="dropdown-item" href="#">5</a>
+							<a class="dropdown-item" href="#">10</a>
+						</div>
+					</li>
+					<li class="nav-item"> <input type="text" class="header_input" size="15"><a href="#"><i class="fas fa-search"></i></a></li>
+					<li class="nav-item"> <a href="/mohae/product/productcart.jsp">장바구니<span class="shoppingbox">5</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	
+	
+	<!-- 사용자 정의 JS -->
+	<script src="/mohae/js/main.js" type="text/javascript"></script>
+	<!-- 부트스트랩 스크립트 -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- jquery 최신 CDN -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </body>
 </html>
-
-
-
-
-
