@@ -1,0 +1,7 @@
+
+	에러페이지 인수값
+	
+	시작점 : signup.js / $("#mid").keyup( function(){
+	발생 시점 : 회원가입중 아이디 중복 체크중 MemberDao.java - idCheck 메서드에서 exception 발생
+	인수 형태 : code=exception
+	
