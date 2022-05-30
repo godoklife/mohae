@@ -132,3 +132,12 @@ textarea{
 	font-size: 15px;
 	color:#999999;	
 }
+#navbar .right_fixed {
+  width: 120px;
+  background-color: #fff;
+  border: 1px solid #111;
+  position: fixed; /*top:169px;*/
+  margin-top: -1px;
+  right: 0;
+  z-index: 100;	/* 무조건 최상단으로 올린다 */
+}

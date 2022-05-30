@@ -19,18 +19,24 @@
 		String loginid = (String)session.getAttribute("login");	// 세션 호출, 기본타입 : Object
 	%>
 	<div style="background-color:#abd0bc;">
+	
+	
 		<%if(loginid!=null && loginid.equals("admin")) {%>
 			<marquee scrollamount="5" class="topmarquee"> 관리자 계정으로 로그인 하셨습니다!!!</marquee>
 		<%} %>
 		<div class="container">
 		
 			<div class = "row py-4">
+			
 				<div class="col-md-4">
 					<img src=""><span id="logo">LOGO</span>
 				</div>
-				<div class="col-md-5 offset-3 d-flex justify-content-end">
+				<div id="test" class="col-md-5 offset-3 d-flex justify-content-end">
+				
+				
+				
 				<ul class="nav">	<!--  nav : li 를 가로배치하는 부트스트랩 -->
-					<li><a href="/c/teamchatting.jsp" style="color:red;">DB형 채팅방</a> | </li>
+					<li><a href="/mohae/teamchatting.jsp" style="color:red;">DB형 채팅방</a> | </li>
 					<li><a href="/mohae/board/chatting.jsp" style="color:red;">소켓형 채팅방</a> | </li>
 					<li><a href="/mohae/main.jsp">HOME</a> | </li>
 					<!--  로그인이 되지 않은 상태 -->
@@ -50,7 +56,12 @@
 				</div>
 			</div>
 			<!--  본 매뉴 -->
-			<div class="navbar navbar-expand-md navbar-light bg-white">
+			<div id="navbar" class="navbar navbar-expand-md navbar-light bg-white">
+				
+				<div class="right_fixed" style="background-color: red;">
+					실시간채팅박스
+				</div>
+			
 				<ul class="nav col-md-10 offset-1 justify-content-between">
 					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">애플<i class="fab fa-apple"></i></a>
 						<div class="dropdown-menu">
