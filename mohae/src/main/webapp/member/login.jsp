@@ -7,12 +7,10 @@
 <title>Insert title here</title>
 
 <link href="/mohae/css/login.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 </head>
 <body>
-<%@include file="../header.jsp"%>	 	 
+<%@include file="../header1.jsp"%>	 	 
 	
 
 <div class="login-form">
@@ -25,7 +23,7 @@
         <div class="form-group">
           <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+                <input type="text" class="form-control" name="id" placeholder="ID" required="required">
             </div>
         </div>
     <div class="form-group">
@@ -39,11 +37,11 @@
         </div>
         <div class="clearfix">
             <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-            <a href="#" class="pull-right text-danger">Forgot Password?</a>
+            <a href="/mohae/member/find.jsp" class="pull-right text-danger">Forgot Password?</a>
         </div>  
         
     </form>
-    <div class="hint-text small">Don't have an account? <a href="#" class="text-danger">Register Now!</a></div>
+    <div class="hint-text small">Don't have an account? <a href="/mohae/member/signup1.jsp" class="text-danger">Register Now!</a></div>
 </div>
 		<div>
 			<a style="text-align: center;" onclick="kakaoLogout();" href="javascript:void(0)"> 

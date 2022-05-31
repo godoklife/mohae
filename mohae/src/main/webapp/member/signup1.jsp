@@ -5,114 +5,63 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="/mohae/css/login.css" rel="stylesheet"/>
 <link href="/mohae/css/signup1.css" rel="stylesheet"/>
 </head>
 <body>
-<%@include file="../header.jsp"%>
+<%@include file="../header1.jsp"%>
 
-	<div class="container">
-		<div class="col-md-6 offset-3">
-		<form>
-			<div class="row">
-				<h4>Account</h4>
-				<div class="input-group input-group-icon">
-					<input type="text" placeholder="Full Name" />
-					<div class="input-icon">
-						<i class="fa fa-user"></i>
-					</div>
-				</div>
-				<div class="input-group input-group-icon">
-					<input type="email" placeholder="Email Adress" />
-					<div class="input-icon">
-						<i class="fa fa-envelope"></i>
-					</div>
-				</div>
-				<div class="input-group input-group-icon">
-					<input type="password" placeholder="Password" />
-					<div class="input-icon">
-						<i class="fa fa-key"></i>
-					</div>
-				</div>
+<div class="login-form">
+    <form action="/examples/actions/confirmation.php" method="post">
+        <h2 class="text-center">Sign up</h2>
+
+			<input class="form-control" type="text" id = "mid" placeholder="아이디를 입력하세요"><br>
+			<span id = "idcheck"> </span><br>
+			<input class="form-control" type="password" id = "mpassword" name = "mid" placeholder="비밀번호를 입력하세요"> <br>
+			<input class="form-control" type="password" id = "mpasswordcheck" name = "mpassword" placeholder="비밀번호를 한번 더 입력하세요"><br>
+			<span id = "passwordcheck"> </span><br>
+			<input class="form-control" type = "text" id = "mname" name = "mname" placeholder="이름을 입력하세요"><br>
+			<span id = "namecheck"> </span><br>
+			<input class="form-control" type = "text" id = "mphone" name = "mphone" placeholder = "전화번호를 입력하세요"><br>
+			<span id = "phonecheck"> </span><br>
+			<input class="form-control" type = "text" id = "memail" name = "memail" placeholder = "이메일주소를 입력하세요">
+			@<input class="form-control" type = "text" id = "memailaddress" name = "memailaddress" value = "직접입력">
+			<select class="form-control" id = "emailselect">
+				<option value = "">직접 입력</option>
+				<option value = "hanmir.com">hanmir.com</option>
+				<option value = "licos.com">licos.com</option>
+				<option value = "hanmail.net">hanmail.net</option>
+			</select>
+			<br><br>
+			<span id = "emailcheck"> </span><br><br>
+			주소 
+			<!--  다음 우편번호 HTML -->
+			<input class="form-control" type="text" id="sample4_postcode" name="maddress1" placeholder="우편번호"readonly>
+			<input class="form-control" type="text" id="sample4_roadAddress" name="maddress2" placeholder="도로명주소" readonly>
+			<input class="form-control" type="text" id="sample4_jibunAddress" name="maddress3" placeholder="지번주소"readonly>
+			<span id="guide" style="color:#999;display:none"></span>
+			<input class="form-control" type="text" id="sample4_detailAddress" name="maddress4" placeholder="상세주소">
+			<input class="form-control" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+			<!--  다음 우편번호 HTML 끝-->
+			<span id = "addresscheck"></span><br>
+			
+			<div class="form-group">
+				<button type="submit" class="btn btn-dark btn-block login-btn">Sign
+					up</button>
 			</div>
-			<div class="row">
-				<div class="col-half">
-					<h4>Date of Birth</h4>
-					<div class="input-group">
-						<div class="col-third">
-							<input type="text" placeholder="DD" />
-						</div>
-						<div class="col-third">
-							<input type="text" placeholder="MM" />
-						</div>
-						<div class="col-third">
-							<input type="text" placeholder="YYYY" />
-						</div>
-					</div>
-				</div>
-				<div class="col-half">
-					<h4>Gender</h4>
-					<div class="input-group">
-						<input id="gender-male" type="radio" name="gender" value="male" />
-						<label for="gender-male">Male</label> <input id="gender-female"
-							type="radio" name="gender" value="female" /> <label
-							for="gender-female">Female</label>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<h4>Payment Details</h4>
-				<div class="input-group">
-					<input id="payment-method-card" type="radio" name="payment-method"
-						value="card" checked="true" /> <label for="payment-method-card"><span><i
-							class="fa fa-cc-visa"></i>Credit Card</span></label> <input
-						id="payment-method-paypal" type="radio" name="payment-method"
-						value="paypal" /> <label for="payment-method-paypal"> <span><i
-							class="fa fa-cc-paypal"></i>Paypal</span></label>
-				</div>
-				<div class="input-group input-group-icon">
-					<input type="text" placeholder="Card Number" />
-					<div class="input-icon">
-						<i class="fa fa-credit-card"></i>
-					</div>
-				</div>
-				<div class="col-half">
-					<div class="input-group input-group-icon">
-						<input type="text" placeholder="Card CVC" />
-						<div class="input-icon">
-							<i class="fa fa-user"></i>
-						</div>
-					</div>
-				</div>
-				<div class="col-half">
-					<div class="input-group">
-						<select>
-							<option>01 Jan</option>
-							<option>02 Jan</option>
-						</select> <select>
-							<option>2015</option>
-							<option>2016</option>
-						</select>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<h4>Terms and Conditions</h4>
-				<div class="input-group">
-					<input id="terms" type="checkbox" /> <label for="terms">I
-						accept the terms and conditions for signing up to this service,
-						and hereby confirm I have read the privacy policy.</label>
-				</div>
-			</div>
+
 		</form>
-		</div>
-	</div>
+    
+</div>
 
-
-	<!-- 다음 우편번호 API script -->
+<!--  푸터 영역 -->
+<%@include file="../footer.jsp"%>
+<!-- 다음 우편번호 API script -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<!-- 다음 우편번호 API script -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <!--  signup.js 불러오기 ->> 여기는 상대 경로로 해도 별 문제 없음. -->
 <script src="../js/signup.js" type="text/javascript"></script>
-<!--  푸터 영역 -->
-<%@include file="../footer.jsp"%>
+
 </body>
 </html>
