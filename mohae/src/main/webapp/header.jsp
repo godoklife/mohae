@@ -29,15 +29,13 @@
 			<div class = "row py-4">
 			
 				<div class="col-md-4">
-					<img src=""><span id="logo">LOGO</span>
+					<img src="/mohae/img/LOGO1.png" style="width: 200px">
 				</div>
 				<div id="test" class="col-md-5 offset-3 d-flex justify-content-end">
 				
 				
 				
 				<ul class="nav">	<!--  nav : li 를 가로배치하는 부트스트랩 -->
-					<li><a href="/mohae/teamchatting.jsp" style="color:red;">DB형 채팅방</a> | </li>
-					<li><a href="/mohae/board/chatting.jsp" style="color:red;">소켓형 채팅방</a> | </li>
 					<li><a href="/mohae/main.jsp">HOME</a> | </li>
 					<!--  로그인이 되지 않은 상태 -->
 					<% if(loginid==null) { %>
@@ -94,16 +92,6 @@
 							<a class="dropdown-item" href="#">HONOR</a>
 						</div>
 					</li>
-					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">샤오미</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Mi</a>
-							<a class="dropdown-item" href="#">RedMi</a>
-							<a class="dropdown-item" href="#">BlackShark</a>
-							<a class="dropdown-item" href="#">POCO</a>
-						</div>
-					</li>
-					<li class="nav-item"> <a href="#">원플러스</a></li>
-					<li class="nav-item"> <a href="#">아수스</a></li>
 					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">소니</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="#">PRO</a>

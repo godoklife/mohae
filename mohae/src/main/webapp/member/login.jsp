@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-	 	 
+<%@include file="../header.jsp"%>	 	 
 	
 
 <div class="login-form">
@@ -46,15 +46,12 @@
     <div class="hint-text small">Don't have an account? <a href="#" class="text-danger">Register Now!</a></div>
 </div>
 		<div>
-			
-		</div>
-		<div>
-			<a onclick="kakaoLogout();" href="javascript:void(0)"> <span>카카오
-					로그아웃</span></a>
+			<a style="text-align: center;" onclick="kakaoLogout();" href="javascript:void(0)"> 
+			<span>카카오 로그아웃</span></a>
 		</div>
 	
 
-	
+<%@include file="../footer.jsp"%>
 <!-- 카카오 스크립트 -->
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript" src="/mohae/js/login.js"></script>
