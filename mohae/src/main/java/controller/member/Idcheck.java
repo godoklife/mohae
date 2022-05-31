@@ -18,10 +18,9 @@ public class Idcheck extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("test");
 		request.setCharacterEncoding("utf-8");
 		String mid=request.getParameter("mid");
-		byte result = MemberDao.instance.idCheck(mid);
+		byte result = MemberDao.instance.idCheck(mid,"memberid");
 		if(result==1) {
 			response.getWriter().print(1);	// 중복아이디 없음. 생성 가능
 		}else if(result==2) {

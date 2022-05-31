@@ -11,13 +11,14 @@ public class MemberDao extends Dao{
 		return false;
 	}
 	
-	// 2. 아이디 중복확인
-	public byte idCheck(String mid) {
+	// 2. 아이디 또는 닉네임 중복확인
+	public byte idCheck(String memberid, String type) {
+		if(type.equals("memberid")) sql="select memberid from member where memberid = ?";
+		else if(type.equals("membernickname"))sql="select membernickname from member where membernickname=?";
 		// 리턴값->> 0 : 예외 발생, 1: 중복값 없음, 2: 중복값 있음.
-		sql="select memberid from member where memberid = ?";
 		try {
 			ps=con.prepareStatement(sql);
-			ps.setString(1, mid);
+			ps.setString(1, memberid);
 			rs = ps.executeQuery();
 			if(rs.next()) {
 				return 2;
@@ -30,10 +31,8 @@ public class MemberDao extends Dao{
 	
 	// 3. 이메일 중복확인
 	
-	// 4. 닉네임 중복확인
+	// 4. 연락처 중복확인
 	
-	// 5. 연락처 중복확인
-	
-	// 6. reserved
+	// 5. reserved
 	
 }

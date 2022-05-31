@@ -1,7 +1,7 @@
 package dto;
 
 public class Member {
-	private int memberno;
+	private int memberno;		// FK, int unsigned이나 실질적으로 21억명을 넘겨서 가입할 일은 없으므로 int형으로 선언
 	private String memberpassword;
 	private String membernickname;
 	private String membername;
