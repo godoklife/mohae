@@ -6,86 +6,67 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="/mohae/css/find.css" rel="stylesheet"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 </head>
 <body>
 <%@include file="../header1.jsp"%>
 
-<div>
-		<div class="form">
+<section class="user">
+  <div class="user_options-container">
+    <div class="user_options-text">
+      <div class="user_options-unregistered">
+        <h2 class="user_unregistered-title">비밀번호를 잃어버리셨습니까?</h2>
+        <p class="user_unregistered-text">여기 버튼을 누르고 비밀번호를 찾아주세요</p>
+        <button class="user_unregistered-signup" id="signup-button">Find password</button>
+      </div>
 
-			<ul class="tab-group">
-				<li class="tab active"><a href="#signup">Sign Up</a></li>
-				<li class="tab"><a href="#login">Log In</a></li>
-			</ul>
+      <div class="user_options-registered">
+        <h2 class="user_registered-title">아이디를 잃어버리셨습니까?</h2>
+        <p class="user_registered-text">여기 버튼을 누르고 아이디를 찾아주세요.</p>
+        <button class="user_registered-login" id="login-button">Find id</button>
+      </div>
+    </div>
+    
+    <div class="user_options-forms" id="user_options-forms">
+      <div class="user_forms-login">
+        <h2 class="forms_title">아이디 찾기</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="email" placeholder="Email" class="forms_field-input" required autofocus />
+            </div>
+            <div class="forms_field">
+              <input type="text" placeholder="Name" class="forms_field-input" required />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="submit" value="Find id" class="forms_buttons-action">
+          </div>
+        </form>
+      </div>
+      <div class="user_forms-signup">
+        <h2 class="forms_title">비밀번호 찾기</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="text" placeholder="Id" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="email" placeholder="Email" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="text" placeholder="Name" class="forms_field-input" required />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="submit" value="Find pw" class="forms_buttons-action">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-			<div class="tab-content">
-				<div id="signup">
-					<h1>Sign Up for Free</h1>
-
-					<form action="/" method="post">
-
-						<div class="top-row">
-							<div class="field-wrap">
-								<label> First Name<span class="req">*</span>
-								</label> <input type="text" required autocomplete="off" />
-							</div>
-
-							<div class="field-wrap">
-								<label> Last Name<span class="req">*</span>
-								</label> <input type="text" required autocomplete="off" />
-							</div>
-						</div>
-
-						<div class="field-wrap">
-							<label> Email Address<span class="req">*</span>
-							</label> <input type="email" required autocomplete="off" />
-						</div>
-
-						<div class="field-wrap">
-							<label> Set A Password<span class="req">*</span>
-							</label> <input type="password" required autocomplete="off" />
-						</div>
-
-						<button type="submit" class="button button-block">Get
-							Started</button>
-
-					</form>
-
-				</div>
-
-				<div id="login">
-					<h1>Welcome Back!</h1>
-
-					<form action="/" method="post">
-
-						<div class="field-wrap">
-							<label> Email Address<span class="req">*</span>
-							</label> <input type="email" required autocomplete="off" />
-						</div>
-
-						<div class="field-wrap">
-							<label> Password<span class="req">*</span>
-							</label> <input type="password" required autocomplete="off" />
-						</div>
-
-						<p class="forgot">
-							<a href="#">Forgot Password?</a>
-						</p>
-
-						<button class="button button-block">Log In</button>
-
-					</form>
-
-				</div>
-
-			</div>
-			<!-- tab-content -->
-
-		</div>
-		<!-- /form -->
-</div>
-		
 <%@include file="../footer.jsp"%>
 <script type="text/javascript" src="/mohae/js/find.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

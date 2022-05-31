@@ -1,39 +1,30 @@
-$(".form")
-  .find("input, textarea")
-  .on("keyup blur focus", function (e) {
-    var $this = $(this),
-      label = $this.prev("label");
+/**
+ * Variables
+ */
+const signupButton = document.getElementById("signup-button"),
+  loginButton = document.getElementById("login-button"),
+  userForms = document.getElementById("user_options-forms");
 
-    if (e.type === "keyup") {
-      if ($this.val() === "") {
-        label.removeClass("active highlight");
-      } else {
-        label.addClass("active highlight");
-      }
-    } else if (e.type === "blur") {
-      if ($this.val() === "") {
-        label.removeClass("active highlight");
-      } else {
-        label.removeClass("highlight");
-      }
-    } else if (e.type === "focus") {
-      if ($this.val() === "") {
-        label.removeClass("highlight");
-      } else if ($this.val() !== "") {
-        label.addClass("highlight");
-      }
-    }
-  });
+/**
+ * Add event listener to the "Sign Up" button
+ */
+signupButton.addEventListener(
+  "click",
+  () => {
+    userForms.classList.remove("bounceRight");
+    userForms.classList.add("bounceLeft");
+  },
+  false
+);
 
-$(".tab a").on("click", function (e) {
-  e.preventDefault();
-
-  $(this).parent().addClass("active");
-  $(this).parent().siblings().removeClass("active");
-
-  target = $(this).attr("href");
-
-  $(".tab-content > div").not(target).hide();
-
-  $(target).fadeIn(600);
-});
+/**
+ * Add event listener to the "Login" button
+ */
+loginButton.addEventListener(
+  "click",
+  () => {
+    userForms.classList.remove("bounceLeft");
+    userForms.classList.add("bounceRight");
+  },
+  false
+);
