@@ -23,7 +23,7 @@
 					<div> <p>이번 여행 정말 별로였습니다. 두 번 다시는 이분이랑 가고싶지 않아요..</p> </div>
 			</div>
 			<div class="col-md-4">
-				<div class="col-sm-3 offset-6"> <img alt="" src="/mohae/img/여행1.jpg"> </div>
+				<div class="col-sm-3 offset-6"> <img class="r_img" alt="" src="/mohae/img/여행1.jpg"> </div>
 			</div>
 		</div>
 

@@ -7,8 +7,11 @@
 p{
 	padding: 5px;
 }
-img{
+r_img{
 	width: 200px;
 	margin-top: 30%;
 	margin-bottom: 30%;
+}
+.rw_img{
+	width: 15px;
 }
