@@ -59,7 +59,7 @@
 			<div id="navbar" class="navbar navbar-expand-md navbar-light bg-white">
 				
 				<div class="right_fixed" style="background-color: red;">
-					실시간채팅박스
+					<input type="button" value="채팅팝업버튼" onclick="showpopup()">
 				</div>
 			
 				<ul class="nav col-md-10 offset-1 justify-content-between">

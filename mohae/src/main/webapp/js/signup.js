@@ -22,9 +22,9 @@ $(function(){
 					}else if(args==2){
 						idcheck.innerHTML = "이미 가입되어 있는 아이디 입니다."
 						pass[0] = false;
-					}else if(args==0){
-						location.replace("/mohae/error.jsp?code=");
-							// SQL단에서 예외 발생시 = 에러페이지로 보내버리기
+					}else if(args==0){	// SQL단에서 예외 발생시 = 에러페이지로 보내버리기
+						location.replace("/mohae/error.jsp?code=exception");
+							
 					}
 				}
 			});	// .ajax END
@@ -35,20 +35,24 @@ $(function(){
 	} );	//	$("#mid").keyup( function(){ END
 	
 	
-	$("#mpassword").keyup(function(){
+	$("#memberpassword").keyup(function(){
 		// 비밀번호 체크
-		//	let mpassword = document.getElementById("mpassword").value;	// javascript식 문법
-		let mpassword = $("#mpassword").val();	// jquery식 문법
-		let mpasswordcheck = $("#mpasswordcheck").val();
+		//	let memberpassword = document.getElementById("memberpassword").value;	// javascript식 문법
+		let memberpassword = $("#memberpassword").val();	// jquery식 문법
+		let memberpasswordcheck = $("#memberpasswordcheck").val();
 		
 		let passwordj = /^[a-zA-Z0-9]{5,15}$/
 		
-		if(passwordj.test(mpassword)){
+		if(passwordj.test(memberpassword)){
 			
-			if(mpassword != mpasswordcheck){
-			// 비밀번호와 비밀번호체크가 같지 않다면
-				$("#passwordcheck").html("입력하신 비밀번호가 서로 다릅니다.");
-				pass[1] = false;
+			if(memberpassword != memberpasswordcheck){
+				if(memberpasswordcheck==""){	// 비밀번호 확인 란이 공백이라면
+					$("#passwordcheck").html("비밀번호를 한번 더 입력해주세요.");
+					pass[1]=false;
+				}else{// 비밀번호와 비밀번호체크가 같지 않다면
+					$("#passwordcheck").html("입력하신 비밀번호가 서로 다릅니다.");
+					pass[1] = false;
+				}
 			}else {
 				$("#passwordcheck").html("사용 가능한 비밀번호 입니다.")
 				pass[1] = true;
@@ -59,22 +63,27 @@ $(function(){
 			$("#passwordcheck").html("영문자,숫자 5~15글자 이내로 작성해주세요.")
 			pass[1] = false;
 		}
-	});	// 	$("#mpassword").keyup(function(){ END
+	});	// 	$("#memberpassword").keyup(function(){ END
 	
-	$("#mpasswordcheck").keyup(function(){
+	$("#memberpasswordcheck").keyup(function(){
 		// 비밀번호 체크
-		//	let mpassword = document.getElementById("mpassword").value;	// javascript식 문법
-		let mpassword = $("#mpassword").val();	// jquery식 문법
-		let mpasswordcheck = $("#mpasswordcheck").val();
+		//	let memberpassword = document.getElementById("memberpassword").value;	// javascript식 문법
+		let memberpassword = $("#memberpassword").val();	// jquery식 문법
+		let memberpasswordcheck = $("#memberpasswordcheck").val();
 		
 		let passwordj = /^[a-zA-Z0-9]{5,15}$/
 		
-		if(passwordj.test(mpasswordcheck)){
+		if(passwordj.test(memberpasswordcheck)){
 			
-			if(mpassword != mpasswordcheck){
-			// 비밀번호와 비밀번호체크가 같지 않다면
-				$("#passwordcheck").html("입력하신 비밀번호가 서로 다릅니다.");
-				pass[2] = false;
+			if(memberpassword != memberpasswordcheck){
+				if(memberpassword==""){
+					$("#passwordcheck").html("비밀번호 칸이 비어있습니다.");
+					pass[2]=false;
+				}else{
+					// 비밀번호와 비밀번호체크가 같지 않다면
+					$("#passwordcheck").html("입력하신 비밀번호가 서로 다릅니다.");
+					pass[2] = false;
+				}
 			}else {
 				$("#passwordcheck").html("사용 가능한 비밀번호 입니다.");
 				pass[1] = true;
@@ -85,10 +94,10 @@ $(function(){
 			$("#passwordcheck").html("영문자,숫자 5~15글자 이내로 작성해주세요.")
 			pass[2] = false;
 		}
-	});	// 	$("#mpasswordcheck").keyup(function(){ END
+	});	// 	$("#memberpasswordcheck").keyup(function(){ END
 	
 	// 이름 체크
-	$("#mname").keyup(function(){
+	$("#mname").keyup(function(){		
 		let mname = $("#mname").val();
 		let namej = /^[가-힣]{2,10}$/;	// 가-힣 : 한글 검사 조건문
 		if(namej.test(mname)){
@@ -268,16 +277,23 @@ $(function(){
     }
 
 
-/*
+
 // form 전송 메서드
 function signup(){
-	if(midflag==0 && mpasswordflag==0 && mnameflag==0 && mphoneflag==0 && maddressflag==0 && memailflag==0){
+	var flag=true;
+	for(i=0; i<pass.length; i++){
+		if(pass[i]==false){flag=false;break;}	// 하나라도 false이면 더이상 검사할 필요가 없음
+	}
+	
+	var 
+	
+	if(flag){	
 		$.ajax({
 			type : "get",
 			url : "../Signup",	// 통신할 경로
 				//signup.js를 호출한 페이지인 signup.jsp가 member폴더 내에 있으므로 한번 나와야함.
 			data : {"mid" : mid,	// 해당 경로로 보내는 데이터
-					"mpassword" : mpassword,
+					"memberpassword" : memberpassword,
 					"mname" : mname,
 					"mphone" : mphone,
 					"memail" : memail,
@@ -290,8 +306,10 @@ function signup(){
 		});	// .ajax END
 	}
 }
-*/
 
+
+/*
+js에서 form 전송하도록 수정하기 위해 비활성화
 
 // form 전송 메서드
 function signup(){
@@ -306,6 +324,7 @@ function signup(){
 	else alert("입력 사항을 확인하세요.");
 }
 
+*/
 
 function passwordchange(){
 	$("#passwordbox").css("display","block");	// display=none으로 숨겨놨던거 풀어주는 명령어

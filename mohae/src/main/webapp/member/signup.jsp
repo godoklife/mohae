@@ -13,11 +13,14 @@
 		<form id = "signupform" action="../Signup" method="post">
 			아이디 : <input type="text" id = "mid" placeholder="아이디를 입력하세요"><br>
 			<span id = "idcheck"> </span><br>
-			비밀번호 : <input type="password" id = "mpassword" name = "mid" placeholder="비밀번호를 입력하세요"> <br>
-			비밀번호 확인 : <input type="password" id = "mpasswordcheck" name = "mpassword" placeholder="비밀번호를 한번 더 입력하세요"><br>
+			비밀번호 : <input type="password" id = "memberpassword" name = "mpassword" placeholder="비밀번호를 입력하세요"> <br>
+			비밀번호 확인 : <input type="password" id = "memberpasswordcheck" name = "mpassword" placeholder="비밀번호를 한번 더 입력하세요"><br>
 			<span id = "passwordcheck"> </span><br>
+			닉네임 :<input type = "text" id = "membernickname" name = "membernickname" placeholder="닉네임 입력"><br> 
+			<span id="nicknamecheck"></span><br>
 			이름 : <input type = "text" id = "mname" name = "mname" placeholder="이름을 입력하세요"><br>
 			<span id = "namecheck"> </span><br>
+			<span>이름은 나중에 아임포트 휴대폰번호 본인인증 API로 가져오는것으로 바꾸기</span><br>
 			전화번호 : <input type = "text" id = "mphone" name = "mphone" placeholder = "전화번호를 입력하세요"><br>
 			<span id = "phonecheck"> </span><br>
 			E-mail : <input type = "text" id = "memail" name = "memail" placeholder = "이메일주소를 입력하세요">
