@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.review_box{
+	border: solid 1px #262626;
+	border-radius: 10px;
+	margin: 5px;
+}
+p{
+	padding: 5px;
+}
+img{
+	width: 200px;
+	margin-top: 30%;
+	margin-bottom: 30%;
+}
