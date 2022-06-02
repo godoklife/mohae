@@ -7,11 +7,11 @@ $("#incontent").focus();	// 페이지 처음 열렸을 때 키보드 커서 입�
 
 // 채팅입력란에 엔터키 눌렀을때 이벤트
 function enterkey(memberid){
-	if(memberid=='null'){
-		alert("로그인 후 채팅 입력이 가능합니다. null 문자열 받음.");
-		$("#incontent").val("");
-		return;
-	}
+//	if(memberid=='null'){
+//		alert("로그인 후 채팅 입력이 가능합니다. null 문자열 받음.");
+//		$("#incontent").val("");
+//		return;
+//	}	 테스트 위해 로그인 전용 채팅 제한 임시 제거
 	if(window.event.keyCode==13){
 		if($("#incontent").val()=="\n"){
 			alert("내용을 입력해주세요.");
@@ -24,10 +24,10 @@ function enterkey(memberid){
 
 // 전송 버튼을 눌렀을때 이벤트
 function sendbtn(memberid){
-	if(memberid=='null'){
-		alert("로그인 후 채팅 입력이 가능합니다. null 문자열 받음.");
-		return;
-	}
+//	if(memberid=='null'){
+//		alert("로그인 후 채팅 입력이 가능합니다. null 문자열 받음.");
+//		return;
+//	}	 테스트 위해 로그인 전용 채팅 제한 임시 제거
 	if($("#incontent").val()==""){
 		alert("내용을 입력해주세요.");
 		return;
@@ -41,13 +41,12 @@ start();	// 테스트 목적으로 웹소켓 1회 무조건 실행
 function start(){
 	// js에서 사용되는 웹소캣 클래스(ws://IP번호:port/프로젝트명/서버소켓이름)
 	let memberid = $("#memberid").val();
-	websocket = new WebSocket("ws://localhost:8080/KYJ_JSPWEB_study/chatting/"+memberid);
-		// Cha
+	if(memberid=="admin"){	// 만약 관리자가 채팅을 시도하면 채팅방을 선택할수 있도록 함
+		alert("관리자입니다");
+	}
+	websocket = new WebSocket("ws://localhost:8080/mohae/chatting/"+memberid);
 	websocket.onopen  = function(e){onOpen(e)};
-		// 여기의 onopen은 Chatting.java의 어노테이션 @OnOpen을 말하는것임.
 	websocket.onmessage = function(e){onmessage(e)};
-		// 실제 소켓의 동작은 어노테이션을 참조하는 웹소켓.onmessage가 하는것이지, 이 뒤의 function문은 없어도 됨.
-		// (참고)마우스 커서 올려다보면 var나 method가 아닌 property라고 뜸. 
 	websocket.onclose = function(e){onclose(e)};
 	websocket.onerror = function(e){onerror(e)};
 }
@@ -55,9 +54,6 @@ function start(){
 
 function onmessage(e){
 	console.log(e);
-	// json형식으로 수신하기
-	// e : 메서드 이벤트 실행 정보가 담겨있는 객체
-		// e.data : 메시지 내용이 담겨있는 필드
 	let msg = JSON.parse(e.data);	// 수신한 문자열을 JSON형식으로 변환
 	let from  = msg["from"];
 	let content = msg["content"];
@@ -72,7 +68,7 @@ function onmessage(e){
 			memberhtml+=
 			'<div class="row p-3">	<!--  접속자 정보 표시 구역 -->'+
 				'<div class="col-sm-4">	<!--  프로필 이미지 표시 구역 -->'+
-					'<img width=100% class="rounded-circle" src="upload/food.jpg">'+
+					'<img width=100% class="rounded-circle" src="../img/chatting/testimg.jpg">'+
 						'<!--  class="rounded-circle" : 부트스트랩, 이미지를 원형으로 출력-->'+
 				'</div>'+
 				'<div class="col-sm-8">	<!--  접속자 이름, 기능 출력 구역 -->'+
@@ -95,7 +91,7 @@ function onmessage(e){
 		}else{	// 남이 보냈을 때의 출력부
 			html+=	'<div class="row g-0">'+
 						'<div class="col-sm-1 pt-3">'+
-							'<img width=100% class="rounded-circle" src="upload/'+img+'">'+
+							'<img width=100% src="../img/chatting/'+img+'">'+
 						'</div>'+
 						'<div class="col-sm-10">'+
 							'<div class="recontent">	<!--  받은 메시지 출력 구역 -->'+
@@ -133,7 +129,7 @@ function send(memberid){
 		type : "1",			// 타입 : 1 이면 일반 메시지, 2이면 접속,탈퇴 알림
 		from : memberid, 		// 보내는 사람		
 		content : content,	// 채팅 내용
-		img : "food.jpg",	// 프로필사진
+		img : "testimg.jpg",	// 프로필사진
 		date : new Date().toLocaleTimeString()	// 채팅 보낸 시간
 	};
 	// json형식으로 통신할 떄 json 모양의 문자열로 변환

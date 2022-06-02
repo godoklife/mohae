@@ -5,3 +5,7 @@
 	발생 시점 : 회원가입중 아이디 중복 체크중 MemberDao.java - idCheck 메서드에서 exception 발생
 	인수 형태 : code=exception
 	
+	
+	시작점 : board/livechat.jsp
+	발생 시점 : memberid가 admin이 아닌 사용자가 해당 페이지에 접근했을 때
+	인수 형태 : code=notadmin

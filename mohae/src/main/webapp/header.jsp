@@ -59,7 +59,7 @@
 			<div id="navbar" class="navbar navbar-expand-md navbar-light bg-white">
 				
 				<div class="right_fixed" style="background-color: red;">
-					<input type="button" value="채팅팝업버튼" onclick="showpopup()">
+					<input type="button" value="채팅팝업버튼" onclick="showpopup('<%=loginid%>')">
 				</div>
 			
 				<ul class="nav col-md-10 offset-1 justify-content-between">
