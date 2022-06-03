@@ -31,7 +31,7 @@
 			<div class = "row">
 				<div class="col-md-4">
 					<div>고객님,<br>너떤 여행을 꿈꾸시나요?</div>
-					<div></div>
+					<div> </div>
 				</div>
 				<div class="col-md-8">
 					<div id="mainslide" class="carousel slide" data-bs-ride="carousel" data-bs-interbal="3000">	<!--  캐러셀 영역 -->
