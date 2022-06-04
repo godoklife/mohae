@@ -18,7 +18,6 @@ $(document).mouseup(function(e){
 
 
 
-
 // 어디로 떠나세요? 텍스트 입력창 누르면 id=select_local div의 display 속성 변경해서 노출
 /*
 function selectlocal(){	
@@ -55,6 +54,7 @@ function showdetailtravel(no){
 	
 	let css=document.getElementById('travel_list').getElementsByTagName('li');	// id=travle_list에서 li태그 찾기
 	css[no-1].className='selected';	// 클래스명 부여 ->> 그냥 바로 css 속성 부여하는게 나은듯?? ->> 클릭이 아니라 드래그하면 버그생겨서 안됨.
+	
 	if(tmpIndex>=0){	// 이전에 선택한 주요도시가 있다면
 		css[tmpIndex-1].removeAttribute('class');	// class 속성 제거 ->> 강조 제거
 	};
