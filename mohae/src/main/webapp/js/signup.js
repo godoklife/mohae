@@ -2,12 +2,9 @@ let pass = [false, false, false, false, false, false, false];
 $(function(){
 	// 아이디 체크 부분
 	$("#mid").keyup( function(){
-		// 1. HTML 태그 내 값 가져오기
 		let mid = document.getElementById("mid").value;
-		// 2. HTML 태그 ID 가져오기
 		let idcheck = document.getElementById("idcheck");
 		
-		// 정규 표현식 : 특정한 규칙을 가지는 문자열의 집합 언어
 		let idj = /^[a-zA-Z0-9]{5,15}$/;	// 영어 소문자 또는 대문자 또는 숫자가 포함된 5~15글자 사이 문자열
 		
 		if( idj.test(mid) ){	// mid가 정규표현식과 같으면
@@ -27,24 +24,20 @@ $(function(){
 							
 					}
 				}
-			});	// .ajax END
+			});	
 		}else{
 			idcheck.innerHTML = "아이디는 영문, 5~15자 이내여야 합니다.";
 			pass[0] = false;
 		}
-	} );	//	$("#mid").keyup( function(){ END
-	
+	} );
 	
 	$("#memberpassword").keyup(function(){
 		// 비밀번호 체크
-		//	let memberpassword = document.getElementById("memberpassword").value;	// javascript식 문법
-		let memberpassword = $("#memberpassword").val();	// jquery식 문법
+		let memberpassword = $("#memberpassword").val();
 		let memberpasswordcheck = $("#memberpasswordcheck").val();
-		
 		let passwordj = /^[a-zA-Z0-9]{5,15}$/
 		
 		if(passwordj.test(memberpassword)){
-			
 			if(memberpassword != memberpasswordcheck){
 				if(memberpasswordcheck==""){	// 비밀번호 확인 란이 공백이라면
 					$("#passwordcheck").html("비밀번호를 한번 더 입력해주세요.");
@@ -58,17 +51,15 @@ $(function(){
 				pass[1] = true;
 				pass[2] = true;
 			}
-			
 		}else{
 			$("#passwordcheck").html("영문자,숫자 5~15글자 이내로 작성해주세요.")
 			pass[1] = false;
 		}
-	});	// 	$("#memberpassword").keyup(function(){ END
+	});	
 	
+	// 비밀번호 체크
 	$("#memberpasswordcheck").keyup(function(){
-		// 비밀번호 체크
-		//	let memberpassword = document.getElementById("memberpassword").value;	// javascript식 문법
-		let memberpassword = $("#memberpassword").val();	// jquery식 문법
+		let memberpassword = $("#memberpassword").val();
 		let memberpasswordcheck = $("#memberpasswordcheck").val();
 		
 		let passwordj = /^[a-zA-Z0-9]{5,15}$/
@@ -94,7 +85,7 @@ $(function(){
 			$("#passwordcheck").html("영문자,숫자 5~15글자 이내로 작성해주세요.")
 			pass[2] = false;
 		}
-	});	// 	$("#memberpasswordcheck").keyup(function(){ END
+	});	
 	
 	// 이름 체크
 	$("#mname").keyup(function(){		
@@ -190,7 +181,6 @@ $(function(){
 		}
 	});
 	
-	
 	// 이메일 주소 목록상자 선택시
 	$("#emailselect").change(function(){	// 목록 상자내 값이 변경되었을때 이벤트 발동
 		let emailselect = $("#emailselect").val();
@@ -219,10 +209,8 @@ $(function(){
 			$("#addresscheck").html("사용가능한 주소 입니다.");  pass[6] = true;
 		}
 	});
-
 	
-	
-} );	// $(function(){ END
+});
 
 
 // 다음 스크립트 API JS
@@ -285,7 +273,6 @@ function signup(){
 		if(pass[i]==false){flag=false;break;}	// 하나라도 false이면 더이상 검사할 필요가 없음
 	}
 	
-	var 
 	
 	if(flag){	
 		$.ajax({
@@ -308,27 +295,10 @@ function signup(){
 }
 
 
-/*
-js에서 form 전송하도록 수정하기 위해 비활성화
 
-// form 전송 메서드
-function signup(){
-	let check = true;
-	for(let i=0; i<pass.length ; i++){
-		if(pass[i] == false) {
-			check=false;	
-			alert(i+"번쨰 : "+pass[i]);
-		}
-	}
-	if(check) document.getElementById("signupform").submit();
-	else alert("입력 사항을 확인하세요.");
-}
-
-*/
 
 function passwordchange(){
-	$("#passwordbox").css("display","block");	// display=none으로 숨겨놨던거 풀어주는 명령어
-	
+	$("#passwordbox").css("display","block");	// display=none -> block
 }
 
 

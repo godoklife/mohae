@@ -104,12 +104,12 @@
 					</li>
 					<li class="nav-item"> <a href="#">원플러스</a></li>
 					<li class="nav-item"> <a href="#">아수스</a></li>
-					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">소니</a>
+					<li class="nav-item dropdown"> 고객센터<a href="#" data-bs-toggle="dropdown"></a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">PRO</a>
-							<a class="dropdown-item" href="#">1</a>
-							<a class="dropdown-item" href="#">5</a>
-							<a class="dropdown-item" href="#">10</a>
+							<a class="dropdown-item" href="/mohae/board/cs/qna.jsp">1:1 게시판 문의</a>
+							<a class="dropdown-item" href="/mohae/board/cs/chat.jsp">실시간 상담원 채팅문의</a>
+							<a class="dropdown-item" href="/mohae/board/cs/faq.jsp">자주 찾는 질문</a>
+							<a class="dropdown-item" href="/mohae/board/cs/cv.jsp">고객의 목소리</a>
 						</div>
 					</li>
 					<li class="nav-item"> <input type="text" class="header_input" size="15"><a href="#"><i class="fas fa-search"></i></a></li>
