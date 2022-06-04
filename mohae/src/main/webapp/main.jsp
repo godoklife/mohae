@@ -8,8 +8,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
+<!-- 사용자 정의 CSS -->
+	<link href="/mohae/css/main.css" rel="stylesheet">
 </head>
 <body>
 	<!--  해더 영역 -->
@@ -29,18 +29,35 @@
 	<div class="bgcolor">
 		<div class = "container">
 			<div class = "row">
-				<div class="col-md-4">
-					<div>고객님,<br>너떤 여행을 꿈꾸시나요?</div>
-					<div> </div>
+				<div class="col-md-4 menubox">
+					<div class="row">
+						<p>고객님,<br><strong>어떤 여행을 꿈꾸시나요?</strong></p>
+						<div>
+							<a href="#">패키지</a>
+							<a href="#">항공</a>
+							<a href="#">호텔</a>
+						</div>
+						<div>
+							<input type="text" placeholder="어디로 떠나세요?" onclick="selectlocal()">
+							<div id="select_local">	<!-- 어디로 떠나세요? 누르면 나오는 매뉴 -->
+					
+							</div>
+						</div>
+						
+						<div class="col-md-6">인천김포</div>
+						<div class="col-md-6">여행시작일선택</div>
+						<div class="col-md-6">항공권은있어요</div>
+						<div class="col-md-6">우리끼리만여행할래요</div>
+					</div>
 				</div>
 				<div class="col-md-8">
 					<div id="mainslide" class="carousel slide" data-bs-ride="carousel" data-bs-interbal="3000">	<!--  캐러셀 영역 -->
-					<div class="carousel-indicators">
-					    <button type="button" data-bs-target="#mainslide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-					    <button type="button" data-bs-target="#mainslide" data-bs-slide-to="1" aria-label="Slide 2"></button>
-					    <button type="button" data-bs-target="#mainslide" data-bs-slide-to="2" aria-label="Slide 3"></button>
-					    <button type="button" data-bs-target="#mainslide" data-bs-slide-to="3" aria-label="Slide 4"></button>
-				  	</div>
+						<div class="carousel-indicators">
+						    <button type="button" data-bs-target="#mainslide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						    <button type="button" data-bs-target="#mainslide" data-bs-slide-to="1" aria-label="Slide 2"></button>
+						    <button type="button" data-bs-target="#mainslide" data-bs-slide-to="2" aria-label="Slide 3"></button>
+						    <button type="button" data-bs-target="#mainslide" data-bs-slide-to="3" aria-label="Slide 4"></button>
+					  	</div>
 						<div class="carousel-inner"><!--  캐러셀 이미지 영역 -->
 							<div class="carousel-item active">
 								<img src="img/testimg/landscape/testimg_1.jpg">
@@ -66,60 +83,12 @@
 						
 					</div>
 				</div>
-				
-				<div class="row adbox">	<!--  광고 영역 -->
-					<div class="col-md-6">	<!--  traning -->
-						<img src="img/productimg/xiaomi/redmi_k50_pro/allcolor.png" width=100%>
-					</div>
-					<div class="col-md-6">	<!-- 1+n -->
-						<img src="img/productimg/xiaomi/redmi_k50_pro/allcolor.png" width=100%>
-					</div>
-					
-				</div>
-				<div class="main_box">	<!--  BEST -->
-					<h6 class="main_title"> BEST SELLING</h6>
-					<div class="row">
-						<div class="col-md-3 best_box">
-							<img src="img/productimg/xiaomi/12/black.png">
-						</div>
-						<div class="col-md-3 best_box">
-							<img src="img/productimg/xiaomi/12/blue.png">
-						</div>
-						<div class="col-md-3 best_box">
-							<img src="img/productimg/xiaomi/12/green.png">
-						</div>
-						<div class="col-md-3 best_box">
-							<img src="img/productimg/xiaomi/12/pink.png">
-						</div>
-					</div>
-				</div>
-				<div class="main_box">	<!--  신상품 -->
-					<h6 class="main_title"> NEW ARRIVAL</h6>
-					<div class="row">
-						<div class="col-md-4 best_box">
-							<!--  제품 이미지 클릭시 pno를 가지고 상세페이지로 이동. -->
-							<div class="imgbox">
-							</div>
-							<div class="p_item">
-								<!--  제품별 모든 사이즈 가져오기 -->
-								
-								<div class="p_size">
-								
-									
-								</div>
-								<div class="row">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div>	<!-- 실시간 구매 후기 -->
-				
-				</div>
 			</div>	
-		</div>
+		</div>	
 	</div>	
+	<img src="/mohae/img/testimg/portrait/testimg_1.jpg">
 	
+	<script type="text/javascript" src="/mohae/js/main.js"></script>
 	<!--  푸터 영역 -->
 	<%@include file="footer.jsp" %>
 </body>

@@ -1,154 +1,44 @@
 @charset "UTF-8";
 
-@font-face {
-    font-family: 'CookieRun-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-a{
-	text-decoration : none;
-	color: black;
-}
-a:hover {
-	color : "skyblue";
-}
-*{
-	font-family: "CookieRun-Regular";
-	margin : 0 0 0 0;
-	padding : 0 0 0 0;
-	/* border : solid 1px red; */
-}
-body{
-	background-color: #fafbfc;
-}
 .bgcolor{
-	line-height: 720px;
 	width:100%;
 	max-height:720px;
 	background-color: #cfeffa;	 
+/*	text-align: center;	*/
+}
+.menubox{
+	padding: 10% 0;
 }
 
-.topmarquee{
-	font-weight: bold;
-	color:red;
-	font-size: 20px;
-}
-.boardview_title{
-	border-bottom: solid 2px #eeeeee;
-	padding : 10px;
-	margin-top : 50px;
-}
-.boardview_title_text{
-	margin-left:5%;
-}
-.boardview_content{
-	min-height:400px;
-}
-textarea{
-	resize:none;
-}
-.replywriter{
-	font-size: 14px;
-}
-.replybtn{
-	font-size:10px
-}
-.replydate{
-	font-size: 7px;
-}
-#logo{
-	font-size:40px;
-	font-weight: bold;
-}
-.header_input{
-	border : 0;
-	border-bottom: solid 1px black;
-	background-color: #eeeeee;
-}
-.shoppingbox{
-	font-size: 10px;
-	background-color:skyblue;
-	color: white;
-	padding: 2px 5px 2px 5px;
-	border-radius: 10px;	
-}
-.dropdown:hover .dropdown-menu{	/* 부트스트랩에서는 호버로 매뉴 여는 기능을 제공 안함. 해당 란은 그 기능 제공 */
-	display: block;
-}
-
-
-.boardlist_title{
-	border-bottom: solid 1px black;
-	padding : 5%;
-	margin : 3% 0 3% 0;
-}
-
-.pagenum{
-	color:black;
-	font-size:12px;
-}
-
-/* main.jsp */
-.adbox{
-	margin: 50px 10px 50px 0;
-}
-.main_box{
-	margin-bottom:50px;
-}
-.main_title{
-	text-align:center;
-	font-size: 20px;
-	font-weight: bold;
-}
-.carousel-item img{		/* 캐러셀 내 이미지 중앙정렬 */
-	display: block;
-	margin : 0 auto;
-}
-
-.best_box img{
+.carousel-item img {
 	width:100%;
-}
-.imgbox{
-	height:350px;
-}
-.p_item{
-	margin:10px;
-}
-.p_title{
-	font-size: 20px;
-	font-weight: bold;
-	
-}
-.p_size{
-	color:#999999;
-	font-size: 15px;
-	border-bottom: solid 1px #999999;
-	padding-bottom: 5px;
-}
-.p_originalprice{
-	font-size:15px;
-	color:#999999;
-	text-decoration: line-through;	/* 취소선 */
-}
-.p_discountprice{
-	font-size: 20px;
-}
-.p_review{
-	text-align: right;
-	font-size: 15px;
-	color:#999999;	
-}
-#navbar .right_fixed {
-  width: 120px;
-  background-color: #fff;
-  border: 1px solid #111;
-  position: fixed; /*top:169px;*/
-  margin-top: -1px;
-  right: 0;
-  z-index: 100;	/* 무조건 최상단으로 올린다 */
-}
-.carousel-item img{
-	width:80%;
 	text-align: center;
+}
+#select_local{
+	z-index: 100;	/* 위쪽으로 올라울 우선 순위 레벨 */
+	background-color:#ffffff;
+	width: 700px; 
+	height : 550px;
+	display: none; /* main.js - selectlocal()를 통해 block <-> none으로 변경됨 */ 
+	position: absolute;
+	border:solid 1px red;
+}
+#select_local span{
+	margin:0 auto;
+	text-align:center;
+	border: soild 1px black;
+	overflow-y:scroll;	/* div 내 내용이 세로 길이를 초과하면 스크롤바가 생성됨. */
+}
+
+#travel_list{
+	list-style: none;
+}
+#travel_list li{
+	cursor: pointer;
+	padding: 5% 0 5% 5%;
+	background-color: #f7f7f7; 
+	border:solid 1px #dddddd;
+}
+#selected_travel{
+	list-style: none;
 }

@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>P H O N E T A K U</title>
+<title>test name</title>
 	<!--  부트스트랩 CSS CDN -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- 사용자 정의 CSS -->
-	<link href="/mohae/css/main.css" rel="stylesheet">
+	<link href="/mohae/css/header.css" rel="stylesheet">
 	<!-- 폰트어썸[ 아이콘 ]  -->
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 

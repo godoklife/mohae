@@ -9,3 +9,9 @@
 	시작점 : board/livechat.jsp
 	발생 시점 : memberid가 admin이 아닌 사용자가 해당 페이지에 접근했을 때
 	인수 형태 : code=notadmin
+	
+	
+	시작점 : main.js / function showdetailtravel(no){
+	발생 시점 : 테스트용
+	인수 형태 : code=notErr
+	

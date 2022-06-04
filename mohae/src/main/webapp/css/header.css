@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+a{
+	text-decoration : none;
+	color: black;
+}
+a:hover {
+	color : "skyblue";
+}
+*{
+	font-family: "CookieRun-Regular";
+	margin : 0 0 0 0;
+	padding : 0 0 0 0;
+	/* border : solid 1px red; */
+}
+body{
+	background-color: #fafbfc;
+}
+
+.topmarquee{
+	font-weight: bold;
+	color:red;
+	font-size: 20px;
+}
+.boardview_title{
+	border-bottom: solid 2px #eeeeee;
+	padding : 10px;
+	margin-top : 50px;
+}
+.boardview_title_text{
+	margin-left:5%;
+}
+.boardview_content{
+	min-height:400px;
+}
+textarea{
+	resize:none;
+}
+.replywriter{
+	font-size: 14px;
+}
+.replybtn{
+	font-size:10px
+}
+.replydate{
+	font-size: 7px;
+}
+#logo{
+	font-size:40px;
+	font-weight: bold;
+}
+.header_input{
+	border : 0;
+	border-bottom: solid 1px black;
+	background-color: #eeeeee;
+}
+.shoppingbox{
+	font-size: 10px;
+	background-color:skyblue;
+	color: white;
+	padding: 2px 5px 2px 5px;
+	border-radius: 10px;	
+}
+.dropdown:hover .dropdown-menu{	/* 부트스트랩에서는 호버로 매뉴 여는 기능을 제공 안함. 해당 란은 그 기능 제공 */
+	display: block;
+}
+
+
+.boardlist_title{
+	border-bottom: solid 1px black;
+	padding : 5%;
+	margin : 3% 0 3% 0;
+}
+
+.pagenum{
+	color:black;
+	font-size:12px;
+}
+
+/* main.jsp */
