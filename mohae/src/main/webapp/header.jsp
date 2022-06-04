@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>P H O N E T A K U</title>
+<title>test name</title>
 	<!--  부트스트랩 CSS CDN -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- 사용자 정의 CSS -->
-	<link href="/mohae/css/main.css" rel="stylesheet">
+	<link href="/mohae/css/header.css" rel="stylesheet">
 	<!-- 폰트어썸[ 아이콘 ]  -->
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 
@@ -119,12 +119,12 @@
 		</div>
 	</div>
 	
-	
+	<!-- jquery 최신 CDN -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<!-- 사용자 정의 JS -->
 	<script src="/mohae/js/main.js" type="text/javascript"></script>
 	<!-- 부트스트랩 스크립트 -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- jquery 최신 CDN -->
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 </body>
 </html>
