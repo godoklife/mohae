@@ -14,7 +14,7 @@
 	width:100%;
 	text-align: center;
 }
-#select_local{
+.select_local{
 	z-index: 100;	/* 위쪽으로 올라울 우선 순위 레벨 */
 	background-color:#ffffff;
 	width: 700px; 
@@ -22,6 +22,9 @@
 	display: none; /* main.js - selectlocal()를 통해 block <-> none으로 변경됨 */ 
 	position: absolute;
 	border:solid 1px red;
+}
+.select_local.show{
+	display:block;
 }
 #select_local span{
 	margin:0 auto;
@@ -38,6 +41,10 @@
 	padding: 5% 0 5% 5%;
 	background-color: #f7f7f7; 
 	border:solid 1px #dddddd;
+}
+.selected{
+	background-color: white !important;
+	color:#a22bb8 !important;
 }
 #selected_travel{
 	list-style: none;

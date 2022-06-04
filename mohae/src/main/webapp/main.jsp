@@ -33,13 +33,13 @@
 					<div class="row">
 						<p>고객님,<br><strong>어떤 여행을 꿈꾸시나요?</strong></p>
 						<div>
-							<a href="#">패키지</a>
-							<a href="#">항공</a>
-							<a href="#">호텔</a>
+							<span onclick="">패키지</span>
+							<span onclick="">항공</span>
+							<span onclick="">호텔</span>
 						</div>
 						<div>
-							<input type="text" placeholder="어디로 떠나세요?" onclick="selectlocal()">
-							<div id="select_local">	<!-- 어디로 떠나세요? 누르면 나오는 매뉴 -->
+							<input type="text" placeholder="어디로 떠나세요?" id="open_local">
+							<div class="select_local" id="select_local">	<!-- 어디로 떠나세요? 누르면 나오는 매뉴 -->
 					
 							</div>
 						</div>
