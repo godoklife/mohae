@@ -63,7 +63,7 @@
 				</div>
 			
 				<ul class="nav col-md-10 offset-1 justify-content-between">
-					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">애플<i class="fab fa-apple"></i></a>
+					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">매뉴1<i class="fab fa-apple"></i></a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="#">PROMAX</a>
 							<a class="dropdown-item" href="#">PRO</a>
@@ -72,14 +72,14 @@
 							<a class="dropdown-item" href="#">SE</a>
 						</div>
 					</li>
-					<li class="nav-item dropdown"> <a href="#">구글<i class="fab fa-google"></i></a>
+					<li class="nav-item dropdown"> <a href="#">매뉴2<i class="fab fa-google"></i></a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="#">PRO</a>
 							<a class="dropdown-item" href="#">GENERAL</a>
 							<a class="dropdown-item" href="#">A</a>
 						</div>
 					</li>
-					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">삼성</a>
+					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">매뉴3</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="#">Z</a>
 							<a class="dropdown-item" href="#">S</a>
@@ -87,14 +87,14 @@
 							<a class="dropdown-item" href="#">M</a>
 						</div>
 					</li>
-					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">화웨이</a>
+					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">매뉴4</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="#">P</a>
 							<a class="dropdown-item" href="#">Mate</a>
 							<a class="dropdown-item" href="#">HONOR</a>
 						</div>
 					</li>
-					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">샤오미</a>
+					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">매뉴5</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="#">Mi</a>
 							<a class="dropdown-item" href="#">RedMi</a>
@@ -102,12 +102,10 @@
 							<a class="dropdown-item" href="#">POCO</a>
 						</div>
 					</li>
-					<li class="nav-item"> <a href="#">원플러스</a></li>
-					<li class="nav-item"> <a href="#">아수스</a></li>
 					<li class="nav-item dropdown"> 고객센터<a href="#" data-bs-toggle="dropdown"></a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="/mohae/board/cs/qna.jsp">1:1 게시판 문의</a>
-							<a class="dropdown-item" href="/mohae/board/cs/chat.jsp">실시간 상담원 채팅문의</a>
+							<a class="dropdown-item" href="/mohae/board/cs/chat.jsp">실시간 상담원 채팅 문의</a>
 							<a class="dropdown-item" href="/mohae/board/cs/faq.jsp">자주 찾는 질문</a>
 							<a class="dropdown-item" href="/mohae/board/cs/cv.jsp">고객의 목소리</a>
 						</div>

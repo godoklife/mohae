@@ -10,7 +10,17 @@
 	<!--  해더 영역 -->
 	<%@include file="../../header.jsp" %>
 	
-	<div class=""></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<%@include file="cs_sidemenu.jsp"%>
+			</div>
+			<div class="col-md-10">
+				<div><h3>자주 찾는 질문</h3></div>
+				
+			</div>
+		</div>
+	</div>
 	
 	<!--  푸터 영역 -->
 	<%@include file="../../footer.jsp" %>
