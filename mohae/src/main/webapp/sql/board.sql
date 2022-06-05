@@ -1,6 +1,7 @@
 CREATE TABLE `mohaemohae`.`board`(
 	boardno int unsigned primary key auto_increment not null,
     boardtitle varchar(500) not null,			-- 한글 기준 최대 125자
+    boardcontenttype vatchar(50) not null,		-- 게시글 분류
     boardcontent varchar(10000) not null,		-- 게시글 내용
 	boardviewcount int unsigned default 0,		-- 게시글 조회수, 기본값 0
     boarddatetime datetime default now(),		-- 게시글 작성 일시
