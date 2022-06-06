@@ -26,5 +26,21 @@
 		</table>
 	</div>
 
+	<form action="boardlist.jsp?pagenum=" class="col-md-4 offset-4 d-flex justify-content-center">
+			<div class="col-md-3">  <!-- 키 선택  -->
+				<select class="form-select" name="key">
+					<option value="btitle"> 제목 </option> 	<!-- key = 필드명 -->
+					<option value="bcontent"> 내용 </option>
+					<option value="mid"> 작성자 </option>
+				</select>
+			</div>
+			<div class="col-md-7"> <!-- 검색 = 키워드 입력창  -->
+				<input type="text" class="form-control" name="keyword"> <!-- keyword = 해당 필드의 값 -->
+			</div>
+			<div class="col-md-2">  <!-- 검색 버튼  -->
+				<input type="submit" class="form-control" value="검색">
+			</div>
+		</form>
+
 </body>
 </html>

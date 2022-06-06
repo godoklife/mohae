@@ -44,7 +44,7 @@ public class login extends HttpServlet {
 		
 		if(result == 1) { // 로그인 성공
 			HttpSession session = request.getSession(); // http 내장 세션 호출
-			session.setAttribute("login",mid); // 세션에 값 저장
+			session.setAttribute("login",memberid); // 세션에 값 저장
 			response.sendRedirect("/mohae/main.jsp"); // 페이지 전환
 			
 		}else if(result == 2){ // 아이디 혹은 비밀번호 오류
