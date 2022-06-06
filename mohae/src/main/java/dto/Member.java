@@ -2,6 +2,7 @@ package dto;
 
 public class Member {
 	private int memberno;
+	private String memberid;
 	private String memberpassword;
 	private String membernickname;
 	private String membername;
@@ -14,10 +15,11 @@ public class Member {
 	
 	public Member() {}
 
-	public Member(int memberno, String memberpassword, String membernickname, String membername, boolean membersex,
-			String memberemail, String memberphone, String memberaddress) {
+	public Member(int memberno, String memberid, String memberpassword, String membernickname, String membername,
+			boolean membersex, String memberemail, String memberphone, String memberaddress) {
 		super();
 		this.memberno = memberno;
+		this.memberid = memberid;
 		this.memberpassword = memberpassword;
 		this.membernickname = membernickname;
 		this.membername = membername;
@@ -33,6 +35,14 @@ public class Member {
 
 	public void setMemberno(int memberno) {
 		this.memberno = memberno;
+	}
+
+	public String getMemberid() {
+		return memberid;
+	}
+
+	public void setMemberid(String memberid) {
+		this.memberid = memberid;
 	}
 
 	public String getMemberpassword() {
@@ -90,6 +100,5 @@ public class Member {
 	public void setMemberaddress(String memberaddress) {
 		this.memberaddress = memberaddress;
 	}
-	
-	
+
 }

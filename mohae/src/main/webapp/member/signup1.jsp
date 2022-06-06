@@ -12,7 +12,7 @@
 <%@include file="../header1.jsp"%>
 
 <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form id="signupform" action="../signup" method="post">
         <h2 class="text-center">Sign up</h2>
 
 			<input class="form-control" type="text" id = "mid" placeholder="아이디를 입력하세요"><br>
@@ -20,8 +20,18 @@
 			<input class="form-control" type="password" id = "mpassword" name = "mid" placeholder="비밀번호를 입력하세요"> <br>
 			<input class="form-control" type="password" id = "mpasswordcheck" name = "mpassword" placeholder="비밀번호를 한번 더 입력하세요"><br>
 			<span id = "passwordcheck"> </span><br>
+			<input class="form-control" type = "text" id = "mnickname" name = "mnickname" placeholder="닉네임을 입력하세요"><br>
+			<span id = "nicknamecheck"> </span><br>
 			<input class="form-control" type = "text" id = "mname" name = "mname" placeholder="이름을 입력하세요"><br>
-			<span id = "namecheck"> </span><br>
+			<span id = "namecheck"> </span>
+			
+			
+			<select id="sexselect">
+				<option value = "true">남자</option>
+				<option value = "false">여자</option>
+			</select>
+
+
 			<input class="form-control" type = "text" id = "mphone" name = "mphone" placeholder = "전화번호를 입력하세요"><br>
 			<span id = "phonecheck"> </span><br>
 			<input class="form-control" type = "text" id = "memail" name = "memail" placeholder = "이메일주소를 입력하세요">
@@ -46,12 +56,10 @@
 			<span id = "addresscheck"></span><br>
 			
 			<div class="form-group">
-				<button type="submit" class="btn btn-dark btn-block login-btn">Sign
-					up</button>
+				<button onclick="signup()" type="button" class="btn btn-dark btn-block login-btn">Sign up</button>
+				<button onclick="location.href='../main1.jsp'" type="button" class="btn btn-dark btn-block login-btn">Back</button>
 			</div>
-
 		</form>
-    
 </div>
 
 <!--  푸터 영역 -->

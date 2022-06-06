@@ -1,4 +1,4 @@
-let pass = [false, false, false, false, false, false, false];
+let pass = [false, false, false, false, false, false, false, false];
 $(function(){
 	// 아이디 체크 부분
 	$("#mid").keyup( function(){
@@ -87,16 +87,29 @@ $(function(){
 		}
 	});	// 	$("#mpasswordcheck").keyup(function(){ END
 	
+	// 닉네임 체크
+	$("#mnickname").keyup(function(){
+		let mname = $("#mnickname").val();
+		let namej = /^[가-힣a-zA-Z0-9]{4,10}$/;	// 가-힣 : 한글 검사 조건문
+		if(namej.test(mname)){
+			$("#nicknamecheck").html("사용 가능한 이름 입니다.");
+			pass[3] = true;
+		}else{
+			$("#nicknamecheck").html("한글, 영어, 숫자 포함한 4~10자 이내만 가능합니다.");
+			pass[3] = false;
+		}
+	});
+	
 	// 이름 체크
 	$("#mname").keyup(function(){
 		let mname = $("#mname").val();
 		let namej = /^[가-힣]{2,10}$/;	// 가-힣 : 한글 검사 조건문
 		if(namej.test(mname)){
 			$("#namecheck").html("사용 가능한 이름 입니다.");
-			pass[3] = true;
+			pass[4] = true;
 		}else{
 			$("#namecheck").html("한글, 2~10자 이내만 가능합니다.");
-			pass[3] = false;
+			pass[4] = false;
 		}
 	});
 	
@@ -107,10 +120,10 @@ $(function(){
 			// 010 - (숫자0~9, 네자리) - (숫자0~9, 네자리) 형식 검사.
 		if(phonej.test(mphone)){
 			$("#phonecheck").html("사용 가능한 휴대폰번호 입니다.");
-			pass[4] = true;
+			pass[5] = true;
 		}else{
 			$("#phonecheck").html("휴대폰 번호만 입력 가능합니다.");
-			pass[4] = false;
+			pass[5] = false;
 		}
 		
 	});
@@ -135,10 +148,10 @@ $(function(){
 				success:function(args){
 					if(args==1){
 						$("#emailcheck").html("이미 가입되어있는 이메일 주소 입니다.");
-						pass[5] = false;
+						pass[6] = false;
 					}else if(args==0){
 						$("#emailcheck").html("사용 가능한 이메일 주소 입니다.");
-						pass[5] = true;
+						pass[6] = true;
 					}
 				}
 			});
@@ -167,10 +180,10 @@ $(function(){
 					success:function(args){
 						if(args==1){
 							$("#emailcheck").html("이미 가입되어있는 이메일 주소 입니다.");
-							pass[5] = false;
+							pass[6] = false;
 						}else if(args==0){
 							$("#emailcheck").html("사용 가능한 이메일 주소 입니다.");
-							pass[5] = true;
+							pass[6] = true;
 						}
 					}
 				});
@@ -205,9 +218,9 @@ $(function(){
 		let addrees4 = $("#sample4_detailAddress").val();
 		
 		if( addrees1 =="" || addrees2 =="" || addrees3 =="" || addrees4==""  ) {
-			$("#addresscheck").html("모든 주소를 입력해주세요");  pass[6] = false;
+			$("#addresscheck").html("모든 주소를 입력해주세요");  pass[7] = false;
 		}else{
-			$("#addresscheck").html("사용가능한 주소 입니다.");  pass[6] = true;
+			$("#addresscheck").html("사용가능한 주소 입니다.");  pass[7] = true;
 		}
 	});
 

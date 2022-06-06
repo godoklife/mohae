@@ -33,15 +33,14 @@
 							</ul></li>
 						<li><a href="#!">커뮤니티</a>
 							<ul class="nav-dropdown">
-								<li><a href="#!">자유게시판</a></li>
-								<li><a href="#!">여행요청</a></li>
+								<li><a href="/mohae/board/board.jsp">자유게시판</a></li>
 								<li><a href="#!">여행후기</a></li>
 							</ul>
 						</li>	
 						<li><a href="#!">고객센터</a>
 							<ul class="nav-dropdown">
-								<li><a href="#!">공지사항</a></li>
-								<li><a href="#!">QnA</a></li>
+								<li><a href="/mohae/board/notice.jsp">공지사항</a></li>
+								<li><a href="/mohae/board/qna.jsp">QnA</a></li>
 								<li><a href="#!">실시간 상담</a></li>
 							</ul>
 						</li>
