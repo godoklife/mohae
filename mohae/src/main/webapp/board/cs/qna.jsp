@@ -1,3 +1,4 @@
+<%@page import="dto.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,6 +12,12 @@
 
 	<!--  해더 영역 -->
 	<%@include file="../../header.jsp" %>
+	<%
+		if(session.getAttribute("user")==null){
+			response.sendRedirect("/mohae/member/login.jsp");	// 로그인 상태가 아니라면 로그인페이지로 보내기
+			return;
+		}
+	%>
 	
 	<div class="container">
 		<div class="row">

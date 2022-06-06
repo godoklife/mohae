@@ -1,11 +1,5 @@
 $(function(){
-	console.log(window.sessionStorage);
-	if(window.sessionStorage.getItem("user")==null){	// 세션이 비어있으면 = 로그인이 안 되어읐으면 로그인페이지로 보내기
-		window.location.href = "/mohae/member/login.jsp";
-	}else{
-		gettablelist();
-	}
-	/////////////////////////////// 이부분 고쳐놔
+	gettablelist();
 });
 
 let jsonArray;
