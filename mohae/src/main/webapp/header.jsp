@@ -10,8 +10,8 @@
 	<!-- 사용자 정의 CSS -->
 	<link href="/mohae/css/header.css" rel="stylesheet">
 	<!-- 폰트어썸[ 아이콘 ]  -->
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
-
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+	
 </head>
 <body>
 	<!-- 해더페이지는 서로 다른 페이지(경로)에서 실행되어야 하기 때문에 절대경로로 작성해야함. -->
@@ -57,11 +57,6 @@
 			</div>
 			<!--  본 매뉴 -->
 			<div id="navbar" class="navbar navbar-expand-md navbar-light bg-white">
-				
-				<div class="right_fixed" style="background-color: red;">
-					<input type="button" value="채팅팝업버튼" onclick="showpopup('<%=loginid%>')">
-				</div>
-			
 				<ul class="nav col-md-10 offset-1 justify-content-between">
 					<li class="nav-item dropdown"> <a href="#" data-bs-toggle="dropdown">매뉴1<i class="fab fa-apple"></i></a>
 						<div class="dropdown-menu">
@@ -104,14 +99,13 @@
 					</li>
 					<li class="nav-item dropdown"> 고객센터<a href="#" data-bs-toggle="dropdown"></a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="/mohae/board/cs/qna.jsp">1:1 게시판 문의</a>
-							<a class="dropdown-item" href="/mohae/board/cs/chat.jsp">실시간 상담원 채팅 문의</a>
+							<a class="dropdown-item" href="/mohae/board/cs/qna.jsp">1:1 문의</a>
+							<a class="dropdown-item" href="/mohae/board/cs/chat.jsp">채팅 문의</a>
 							<a class="dropdown-item" href="/mohae/board/cs/faq.jsp">자주 찾는 질문</a>
 							<a class="dropdown-item" href="/mohae/board/cs/cv.jsp">고객의 목소리</a>
 						</div>
 					</li>
 					<li class="nav-item"> <input type="text" class="header_input" size="15"><a href="#"><i class="fas fa-search"></i></a></li>
-					<li class="nav-item"> <a href="/mohae/product/productcart.jsp">장바구니<span class="shoppingbox">5</span></a></li>
 				</ul>
 			</div>
 		</div>

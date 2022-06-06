@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>모해모해 - 1:1 문의하기</title>
 	<link href="/mohae/css/qna.css" rel="stylesheet">
 </head>
 <body>
@@ -26,7 +26,17 @@
 			</div>
 			
 			<div class="col-md-10">
-				<span class="title_middle">나의 문의 내역</span>
+				<div>
+					<span class="title_l">1:1 문의하기</span>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<span class="title_m">나의 문의 내역</span>
+					</div>
+					<div class="col-md-2 offset-6">
+						<a href="/mohae/board/cs/qnawrite.jsp"><button class="btnbasic">문의하기 ></button></a>
+					</div>
+				</div>
 				<table class="table table-hover" id="qnatable">
 					<!--  qna.js - gettablelist() -->
 				</table>

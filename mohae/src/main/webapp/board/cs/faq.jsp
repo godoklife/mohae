@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>모해모해 - 자주 찾는 질문</title>
 </head>
 <body>
 	<!--  해더 영역 -->
