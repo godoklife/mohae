@@ -1,12 +1,10 @@
 package controller.board.cs;
 
-import java.io.BufferedInputStream;
-import java.io.File;
+import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Enumeration;
-import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,8 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -36,39 +32,45 @@ public class SummernoteImgUpload extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json");
 		
-		
 //		JSONObject jsonObject = new JSONObject();
 //		JSONArray jsonArray = new JSONArray();
 		
-		// 이클립스 프로젝트에 이미지 저장
-		//String uploadPath = request.getSession().getServletContext().getRealPath("/img/board");
+		// eclipse project path ->> 팀원마다 windows 사용자 이름이 달라서 지정 불가
+		//String uploadPath = "C:\\Users\\Matebook_14\\git\\mohae\\mohae\\src\\main\\webapp\\img\\tmp";
+		
+		// 탐캣 서버 경로 ->> C:\Users\Matebook_14\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\mohae\img\tmp\
 		String tmpPath = request.getSession().getServletContext().getRealPath("/img/tmp");
 		MultipartRequest mr = new MultipartRequest(request, tmpPath, 20971520, "utf-8", new DefaultFileRenamePolicy());
-		String name = mr.getFilesystemName((String)request.getAttribute("file"));
-		System.out.println(name);
-		try {
-			
-			
-//			JSONArray ja = new JSONArray(json);
-//			System.out.println(ja.toString());
-//			System.out.println(1);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+		
+		String name = mr.getFilesystemName("file");
+		
+	/*	
+	 * 	MultipartRequest로 파일명중복 해결 안되면 UUID로 리네이밍 하는걸로 바꿔버릴것.
+	 * 	이하 해당 코드.
+	 * 	
+	 * 	String fileExtension = mr.getFilesystemName("file").substring(((mr.getFilesystemName("file").lastIndexOf("."))+1));
+	 *	System.out.println("첨부파일확장자 : "+fileExtension);
+	 *	String name = UUID.randomUUID().toString()+"."+fileExtension; 
+	 *	
+	 */
+		
+		FileInputStream fis = new FileInputStream(mr.getFile("file"));
+		System.out.println("등록한 파일의 크기 : "+fis.available());
+		System.out.println("임시저장경로 : "+tmpPath+"\\"+name);
+		
+		byte[] bytes = new byte[fis.available()];
+		fis.read(bytes);
+		fis.close();
+		
+		FileOutputStream fos = new FileOutputStream(tmpPath+"\\"+name);	// 이미지 임시저장경로 지정
+		BufferedOutputStream bos = new BufferedOutputStream(fos, 4096);	// 저장 경로와 버퍼사이즈(4096바이트)지정
+		bos.write(bytes);
+		
+		System.out.println("업로드한 파일 이름 : "+name);
+		bos.close();
+		fos.close();
 		
 		
-		String imgName = mr.getFilesystemName("file");
-		File tmpSaveImg = new File(tmpPath+"\\"+imgName);
-		BufferedInputStream bif = new BufferedInputStream(new FileInputStream(tmpSaveImg));
-		byte[] bytes=new byte[(int)tmpSaveImg.length()];
-		bif.read(bytes);
-		bif.close();
-//		try {
-//			jsonObject.put("url", "/mohae/img/tmp/"+imgName);
-//			jsonObject.put("responseCode", "success");
-//		} catch (Exception e) {System.out.println("SummernoteImgUpload JSONException : "+e);}
-//		jsonArray.put(jsonObject);
-//		response.getWriter().print(jsonArray);
 	}
 
 }
