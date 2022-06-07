@@ -3,13 +3,30 @@ package dao;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import dto.Board;
+
 public class BoardDao extends Dao{
 	
 	public static BoardDao instance = new BoardDao();
 	public BoardDao() {super();}
 	
 	// 1. 글 쓰기 메서드
-	
+	public byte saveSummernote(Board board) {
+		String sql = "insert into board(boardtitle, boardcontenttype, boardcontent, "
+				+ "boardcategory, memberno, boardattachment) values(?, ?, ?, ?, ?, ?)"; 
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, board.getBoardtitle());
+			ps.setString(2, board.getBoardcontenttype());
+			ps.setString(3, board.getBoardcontent());
+			ps.setInt(4, board.getBoardcategory());
+			ps.setInt(5, board.getMemberno());
+			ps.setBoolean(6, board.isBoardattachment());
+			ps.executeUpdate();
+			return 1;
+		} catch (Exception e) {System.out.println("BoardDao_saveSummernote_Exception : "+e);}
+		return 0;
+	}
 	// 2. 모든 글 불러오기
 	
 	// 3. 글 검색해서 불러오기

@@ -3,6 +3,7 @@ package dto;
 public class Board {
 	private long boardno;	// PK, int unsigned
 	private String boardtitle;
+	private String boardcontenttype;
 	private String boardcontent;
 	private int boardviewcount;
 	private String boarddatetime;
@@ -15,12 +16,13 @@ public class Board {
 	public String toString() {return super.toString();}
 	
 	public Board() {}
-
-	public Board(long boardno, String boardtitle, String boardcontent, int boardviewcount, String boarddatetime,
-			int boardcategory, int memberno, boolean boardattachment) {
+	
+	public Board(long boardno, String boardtitle, String boardcontenttype, String boardcontent, int boardviewcount,
+			String boarddatetime, int boardcategory, int memberno, boolean boardattachment) {
 		super();
 		this.boardno = boardno;
 		this.boardtitle = boardtitle;
+		this.boardcontenttype = boardcontenttype;
 		this.boardcontent = boardcontent;
 		this.boardviewcount = boardviewcount;
 		this.boarddatetime = boarddatetime;
@@ -33,7 +35,7 @@ public class Board {
 		return boardno;
 	}
 
-	public void setBoardno(int boardno) {
+	public void setBoardno(long boardno) {
 		this.boardno = boardno;
 	}
 
@@ -43,6 +45,14 @@ public class Board {
 
 	public void setBoardtitle(String boardtitle) {
 		this.boardtitle = boardtitle;
+	}
+
+	public String getBoardcontenttype() {
+		return boardcontenttype;
+	}
+
+	public void setBoardcontenttype(String boardcontenttype) {
+		this.boardcontenttype = boardcontenttype;
 	}
 
 	public String getBoardcontent() {

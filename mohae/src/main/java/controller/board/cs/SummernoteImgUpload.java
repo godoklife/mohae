@@ -36,20 +36,22 @@ public class SummernoteImgUpload extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json");
 		
-		JSONObject jsonObject = new JSONObject();
-		JSONArray jsonArray = new JSONArray();
+		
+//		JSONObject jsonObject = new JSONObject();
+//		JSONArray jsonArray = new JSONArray();
 		
 		// 이클립스 프로젝트에 이미지 저장
 		//String uploadPath = request.getSession().getServletContext().getRealPath("/img/board");
 		String tmpPath = request.getSession().getServletContext().getRealPath("/img/tmp");
 		MultipartRequest mr = new MultipartRequest(request, tmpPath, 20971520, "utf-8", new DefaultFileRenamePolicy());
-																		// 20MB
-		
-		String json=mr.getParameter("file");
+		String name = mr.getFilesystemName((String)request.getAttribute("file"));
+		System.out.println(name);
 		try {
-			JSONArray ja = new JSONArray(json);
-			System.out.println(ja.toString());
-			System.out.println(1);
+			
+			
+//			JSONArray ja = new JSONArray(json);
+//			System.out.println(ja.toString());
+//			System.out.println(1);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -61,12 +63,12 @@ public class SummernoteImgUpload extends HttpServlet {
 		byte[] bytes=new byte[(int)tmpSaveImg.length()];
 		bif.read(bytes);
 		bif.close();
-		try {
-			jsonObject.put("url", "/mohae/img/tmp/"+imgName);
-			jsonObject.put("responseCode", "success");
-		} catch (Exception e) {System.out.println("SummernoteImgUpload JSONException : "+e);}
-		jsonArray.put(jsonObject);
-		response.getWriter().print(jsonArray);
+//		try {
+//			jsonObject.put("url", "/mohae/img/tmp/"+imgName);
+//			jsonObject.put("responseCode", "success");
+//		} catch (Exception e) {System.out.println("SummernoteImgUpload JSONException : "+e);}
+//		jsonArray.put(jsonObject);
+//		response.getWriter().print(jsonArray);
 	}
 
 }

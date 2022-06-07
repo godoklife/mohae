@@ -21,7 +21,6 @@
 			return;
 		}else{
 			Member member = (Member)session.getAttribute("user");
-			
 		}
 	%>
 	
@@ -43,11 +42,18 @@
 						<a href="/mohae/board/cs/qna.jsp"><button class="btnbasic btncancel">뒤로가기</button></a>
 					</div>
 					<div class="col-md-2">
-						<a href="#"><button class="btnbasic btnconfirm" onclick="submit_qna_write()">작성완료</button></a>
+						<button class="btnbasic btnconfirm" onclick="submit_qna_write(1)">작성완료</button>
 					</div>
 				</div>
 				<div>
 					<input type="text" placeholder="제목을 입력하세요" id="btitle">
+					<select>
+						<option id="bcontenttype" value="일반">일반</option>
+						<option id="bcontenttype" value="결제">결제</option>
+						<option id="bcontenttype" value="커뮤니티">커뮤니티</option>
+						<option id="bcontenttype" value="이용문의">이용문의</option>
+						<option id="bcontenttype" value="기타">기타</option>
+					</select>
 				</div>
 				<div id="summernote">
 					<!--  qnawrite.js ->> summernote() -->
