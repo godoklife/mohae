@@ -12,6 +12,8 @@
 	<!-- 폰트어썸[ 아이콘 ]  -->
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 
+	<!-- 제이쿼리 타임피커 -->
+
 </head>
 <body>
 	<!-- 해더페이지는 서로 다른 페이지(경로)에서 실행되어야 하기 때문에 절대경로로 작성해야함. -->
@@ -118,6 +120,7 @@
 			</div>
 		</div>
 	</div>
+
 	
 	<!-- jquery 최신 CDN -->
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
