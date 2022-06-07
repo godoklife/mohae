@@ -1,3 +1,4 @@
+<%@page import="dto.Member"%>
 <%@page import="java.util.TreeSet"%>
 <%@page import="java.util.Set"%>
 <%@page import="java.text.DecimalFormat"%>
@@ -20,9 +21,14 @@
 		    InetAddress inetAddress=InetAddress.getLocalHost();
 		    ipAddress=inetAddress.getHostAddress();
 		}
-		session.setAttribute("ip", ipAddress);
+		session.setAttribute("ip", ipAddress);	// 나중에 지울것. 필요없는거같음
 		System.out.println("main.jsp 클라이언트IP 주소: "+ipAddress);
-	 
+////////////////////////////////////////////////////////////////////////////////////		
+		Member member = new Member(1, "testid", "테스트닉네임");
+		session.setAttribute("user", member);
+		// 로그인 귀찮아서 만든 테스트 세션, 나중에 반드시 삭제할것
+////////////////////////////////////////////////////////////////////////////////////
+
 	%>
 	<!--  메인 상단(달력, 캐러셀) 영역 -->
 	

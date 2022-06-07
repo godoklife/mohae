@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.cs_sidetitle{
+	margin-top: 30px;
+	font-size: 24px;
+}
+.cs_sidecontent{
+	margin: 3% 5% 0 5%;
+	border-top: solid 2px #000000;
+	border-bottom: solid 2px #000000;
+}
+.cs_sidecontent li{
+	list-style: none;
+	padding:5% 0;
+	color: #333333;
+	border-bottom: solid 1px #aaaaaa;
+	font-size:15px;
+}

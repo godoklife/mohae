@@ -1,0 +1,15 @@
+	세션에 넣을값 "user"
+	
+		"memberno"
+		"memberid"
+		"membernickname"
+		
+		
+		
+		
+		
+		
+		
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("user", member);

@@ -1,9 +1,14 @@
 var tmpIndex=-1;
 
+
+	
+
+
 $(document).on('click', '#open_local', function(e){
 	var target = $("#select_local");
 	$(target).addClass("show");
 	showtravel();
+	$('html, body').animate({scrollTop:350},100);	// 350px의 위치로 100ms내에 스크롤
 });
 
 // 외부영역 클릭시 도시 선택 레이어팝업 닫히는 스크립트

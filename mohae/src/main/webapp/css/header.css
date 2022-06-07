@@ -1,11 +1,18 @@
 @charset "UTF-8";
 
 @font-face {
-    font-family: 'CookieRun-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-family: 'Tium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/Tium.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+}
+
+
 a{
 	text-decoration : none;
 	color: black;
@@ -14,7 +21,7 @@ a:hover {
 	color : "skyblue";
 }
 *{
-	font-family: "CookieRun-Regular";
+	font-family: "Tium";
 	margin : 0 0 0 0;
 	padding : 0 0 0 0;
 	/* border : solid 1px red; */
@@ -83,4 +90,32 @@ textarea{
 	font-size:12px;
 }
 
-/* main.jsp */
+.title_l{
+	font-size: 32px;
+}
+.title_m{
+	font-size: 22px;
+}
+										/* 이하 버튼값 정의 */
+.btnbasic{
+	padding:0 30px;
+	color:#ffffff;
+	font-size: 14px;
+	text-decoration: none;
+	cursor: pointer;
+	line-height: 34px;
+	background-color: #888888;	
+	border: none;
+	border-radius: 5px;
+	letter-spacing: -0.5px;
+}
+
+.btncancel{
+	background-color: #464646;
+}
+.btnconfirm{
+	background-color: #54a91d;
+}
+										/* 텍스트 입력창 관련 정의 ->> 미구현 */
+
+
