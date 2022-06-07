@@ -10,7 +10,7 @@
 	<!-- 사용자 정의 CSS -->
 	<link href="/mohae/css/header.css" rel="stylesheet">
 	<!-- 폰트어썸[ 아이콘 ]  -->
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 
 	<!-- 제이쿼리 타임피커 -->
 
