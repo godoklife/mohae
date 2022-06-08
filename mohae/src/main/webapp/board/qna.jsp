@@ -24,6 +24,11 @@
 				<th width="10%">조회수</th>
 			</tr>
 		</table>
+		
+	<div class="col-md-2 offset-10">
+		<a href="boardwrite.jsp"> <button class="form-control">글쓰기</button> </a>
+	</div>	
+		
 	</div>
 
 	<form action="boardlist.jsp?pagenum=" class="col-md-4 offset-4 d-flex justify-content-center">

@@ -1,3 +1,6 @@
+<%@page import="dto.Review"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="dao.ReviewDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,20 +19,24 @@
 			<h5> 이번 여행이 어떠셨는지 평가해 주세요. </h5>
 		</div>
 		
+		<%
+			ArrayList<Review> reviews = ReviewDao.getReviewdao().getreview(plan);
+			for( Review r : reviews){
+		%>  
+		
 		<div class="offset-4">
-			<div>
-				<h4>여행 제목</h4>
-			</div>
 			<div class="row">
-				<div class="col-md-3"> 리더 아이디 </div> <div class="col-md-3"> 날짜</div>
+				<div class="col-md-3">  <%=r.getMemberid() %></div> <div class="col-md-3"> 날짜</div>
 			</div><br>
 			<div class="row"> 
-				<div class="col-sm-2 rw_img"> <img onclick="up()" alt="" src="/mohae/img/up.png"> </div>
-				<div class="col-sm-2 rw_img"> <img onclick="down()" alt="" src="/mohae/img/down.png"> </div>
+				<div id="up_btn" class="col-sm-2 rw_img"> <img onclick="up()" alt="" src="/mohae/img/up.png"> </div>
+				<div id="down_btn" class="col-sm-2 rw_img"> <img onclick="down()" alt="" src="/mohae/img/down.png"> </div>
 			</div>
 		</div>
 	</div>
 	
+ <%} %>	 
+
 <script type="text/javascript" src="/mohae/js/review.js"></script>	
 </body>
 </html>
